@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Pendaftaran Sakramen Penguatan</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="konten">
+		<div class="kepala">
+			<div class="lock"></div>
+			<h2 class="judul">Form Pendaftaran Sakramen Penguatan</h2>
+		</div>
+		<div class="artikel">
+			<form class="horizontal" action="penguatan.html" method="post"></form>
+			<fieldset><legend>Data Diri</legend>
+				<div class="grup">
+					<label for="nama">Nama Diri<span class="required">*</span></label>
+					<input type="text" name="Nama" required placeholder="Masukan Nama Lengkap Anda">
+				</div>
+				<div class="grup">
+					<label for="nama_baptis">Nama Baptis<span class="required">*</span></label>
+					<input type="text" name="nama_baptis" required placeholder="Masukan Nama Baptis Anda">
+				</div>
+				<div class="grup">
+					<label for="ttl">Tempat Tanggal Lahir<span class="required">*</span></label>
+					<input type="text" name="ttl" required placeholder="Masukan Tempat dan Tanggal Lahir Anda">
+				</div>
+				<div class="grup">
+					<label for="tempat">Tempat Baptis<span class="required">*</span></label>
+					<input type="text" name="tempat" required placeholder="Masukan Tempat Baptis">
+				</div>
+				<div class="grup">
+					<label for="buku">Nomor Buku Baptis<span class="required">*</span></label>
+					<input type="text" name="buku" required placeholder="Masukan Nomor Buku Baptis">
+				</div>
+				<div class="grup">
+					<label for="tgl">Tanggal Baptis<span class="required">*</span></label>
+					<input type="text" name="tgl" required placeholder="Masukan Tanggal Baptis">
+				</div>
+				<div class="grup">
+					<label for="nama_ayah">Nama Ayah<span class="required">*</span></label>
+					<input type="text" name="nama_ayah" required placeholder="Masukan Nama Ayah">
+				</div>
+				<div class="grup">
+					<label for="nama_ibu">Nama Ibu<span class="required">*</span></label>
+					<input type="text" name="nama_ibu" required placeholder="Masukan Nama Ibu">
+				</div>
+				<div class="grup">
+					<label for="alamat">Alamat Calon<span class="required">*</span></label>
+					<input type="textarea" name="alamat" required placeholder="Masukan Alamat Calon">
+				</div>
+				<div class="grup">
+					<label for="no.telp">No Telepon/Hp<span class="required">*</span></label>
+					<input type="tel" name="no.telp" pattern="\d\d\d\d\d\d\d\d\d\d\d\d" required placeholder=" Masukkan No.Telepon 08xxxxxxxxxx">
+				</div>
+				<div class="grup">
+					<label for="paroki">Paroki Asal<span class="required">*</span></label>
+					<input type="text" name="paroki" required placeholder="Masukan Paroki Asal">
+				</div>
+				<div class="grup">
+					<label for="pelindung">Santo/a Pelindung Penguatan<span class="required">*</span></label>
+					<input type="text" name="pelindung" required placeholder="Masukan Nama Pelindung">
+				</div>
+				<div class="grup">
+					<label for="nama">Wali Penguatan<span class="required">*</span></label>
+					<input type="text" name="nama" required placeholder="Masukan Nama Wali Penguatan">
+				</div>
+				<div class="grup-offset">
+ 					<button type="submit" value="Sign In">Submit</button>
+					 <button type="reset" value="Reset">Reset</button>
+				 </div>
+			</fieldset>
+			<div class="footer">
+ 				<h5>Syarat :
+ 					1. Calon telah menerima Komuni Pertama
+ 					2. Calon telah genap berusia 13 tahun atau minimal kelas 1 SMP
+ 					3. Melampirkan Fotokopi Surat Baptis
+ 				</h5>
+			 </div>
+		</div>
+	</div>
+</body>
+</html>
