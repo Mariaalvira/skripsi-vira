@@ -31,7 +31,7 @@ class CreateSakramenBaptisTable extends Migration
             $table->string('fc_surat_pernikahan_gereja_orangtua');
             $table->string('fc_surat_nikah-sipil_orangtua');
             $table->string('fc_akte_kelahian');
-            $table->('fc_surat_nikah_gereja_wali_baptis');
+            $table->string('fc_surat_nikah_gereja_wali_baptis');
             $table->string('fc_surat_ganti_nama');
             $table->timestamps();
         });

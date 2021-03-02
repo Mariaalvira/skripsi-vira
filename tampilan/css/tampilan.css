@@ -1,4 +1,4 @@
-{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -202,7 +202,6 @@ footer
     border-bottom: 5px double chocolate;
     transition-duration: 2s;
 }
- 
  
 /*untuk tablet*/
 @media screen and (max-width:1080px)
