@@ -17,6 +17,22 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/baptis-anak', function () {
+    return view('content.form.baptis_anak');
+});
+
+Route::get('/baptis-dewasa', function () {
+    return view('content.form.baptis_dewasa');
+});
+
+Route::get('/keterangan-perkawinan', function () {
+    return view('content.form.keterangan_perkawinan');
+});
+
+Route::get('/pengurapan-orang-sakit', function () {
+    return view('content.form.pengurapan_orang_sakit');
+});
+
 // Auth::routes();
 
 Route::middleware('auth:akun')->group(function(){

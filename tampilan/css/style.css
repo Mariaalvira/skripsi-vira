@@ -1,25 +1,25 @@
 body{
  background-image: url(lilin.jpg);
- width: 500px;
- height: 300px;
+ width: 700px;
+ height: 400px;
  margin: 10 auto;
  opacity: 0.9;
- border: #00868b;
+ border: #6495ED;
  margin-top: -20px;
  box-sizing: 50px;
 }
 .konten{
- background:#556b2f;
- border: #00868b;
+ background:#5F9EA0;
+ border: #6495ED;
  width: 360px;
  margin: 30px auto 0;
  border-radius: 16px;
  overflow: hidden;
 }
 .kepala{
- background: #1a1a1a;
+ background: #00008B;
  padding: 7px 7px;
- height: 40px;
+ height: 60px;
 }
 .lock{
  display: inline-block;
