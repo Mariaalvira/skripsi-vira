@@ -33,6 +33,10 @@ Route::get('/pengurapan-orang-sakit', function () {
     return view('content.form.pengurapan_orang_sakit');
 });
 
+Route::get('/dashboard-admin', function () {
+    return view('content.admin.tabel_bayar');
+});
+
 // Auth::routes();
 
 Route::middleware('auth:akun')->group(function(){
