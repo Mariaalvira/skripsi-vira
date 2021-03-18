@@ -47,7 +47,7 @@
         <input type="text" class="form-control" id="exampleInputTelp1" placeholder="Masukan Nomor TeLepon/ Hp">
       </div>
       <div class="custom-file">
-        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+        <input type="text" class="custom-file-input" id="validatedCustomFile" required>
         <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Surat Baptis.</small>
         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
           <div class="invalid-feedback">Example invalid custom file feedback</div>

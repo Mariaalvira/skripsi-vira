@@ -82,25 +82,25 @@
         <input type="text" class="form-control" id="exampleInpuPemberkatan1" placeholder="Masukan Pemberkatan dan Pembaptisan">
       </div>
       <div class="custom-file">
-        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+        <input type="text" class="custom-file-input" id="validatedCustomFile" required>
         <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Akta Kelahiran/ Surat Keterangan Lahir Calon Baptis.</small>
         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
           <div class="invalid-feedback">Example invalid custom file feedback</div>
       </div>
       <div class="custom-file">
-        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+        <input type="text" class="custom-file-input" id="validatedCustomFile" required>
         <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Surat Ganti Nama(Kalau punya/ada).</small>
         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
           <div class="invalid-feedback">Example invalid custom file feedback</div>
       </div>
       <div class="custom-file">
-        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+        <input type="text" class="custom-file-input" id="validatedCustomFile" required>
         <small id="emailHelp" class="form-text text-muted">Masukan Surat Nikah (Gereja/KUA/Catatan Sipil (kalau sudah kawin/ nikah)).</small>
         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
           <div class="invalid-feedback">Example invalid custom file feedback</div>
       </div>
       <div class="custom-file">
-        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+        <input type="text" class="custom-file-input" id="validatedCustomFile" required>
         <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Surat Nikah Gereja Katolik atau Surat Baptis dari Wali Baptis.</small>
         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
           <div class="invalid-feedback">Example invalid custom file feedback</div>

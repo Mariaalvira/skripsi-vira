@@ -21,8 +21,8 @@ class CreateSakramenBaptisTable extends Migration
             $table->date('tanggal_lahir');
             $table->string('nama_ayah');
             $table->string('nama_ibu');
-            $table->enum('umur', ['anak', 'dewasa']);
-            $table->set('gereja', 'kua', 'catatan_sipil', 'cara_lain');
+            $table->string('umur');
+            $table->string('status_perkawinan_orangtua');
             $table->string('alamat_orangtua');
             $table->string('nama_wali_baptis');
             $table->string('tempat_baptis');

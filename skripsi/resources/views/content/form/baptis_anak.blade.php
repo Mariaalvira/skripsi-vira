@@ -1,26 +1,29 @@
-@extends('layouts.admin')
+@extends('layouts.user')
 
 @section('content')
-	<form>
+	<form action="/sakramen/baptis_anak" method="post">
+    {{ csrf_field() }}
   		<div class="form-group">
+                <input type="hidden" name="umur" value="anak">
+
   			<label for="exampleInputNama1">Nama Diri</label>
-    		<input type="text" class="form-control" id="exampleInputNama1" aria-describedby="namaHelp" placeholder="Masukan nama">
+    		<input type="text" class="form-control" id="exampleInputNama1" aria-describedby="namaHelp" placeholder="Masukan nama" name="nama_diri">
   		</div>
   		<div class="form-group">
     		<label for="exampleInputNamaBaptis1">Nama Baptis</label>
-    		<input type="text" class="form-control" id="exampleInputNamaBaptis1" placeholder="Masukan Nama Baptis">
+    		<input type="text" class="form-control" id="exampleInputNamaBaptis1" placeholder="Masukan Nama Baptis" name="nama_baptis">
   		</div>
       <div class="form-group">
         <label for="exampleInputTtl1">Tempat Tanggal Lahir</label>
-        <input type="text" class="form-control" id="exampleInputTtl1" placeholder="Masukan Tempat Tanggal Lahir">
+        <input type="text" class="form-control" id="exampleInputTtl1" placeholder="Masukan Tempat Tanggal Lahir" name="tempat_tanggal_lahir">
       </div>
       <div class="form-group">
         <label for="exampleInputNamaAyah1">Nama Ayah</label>
-        <input type="text" class="form-control" id="exampleInputNamaAyah1" placeholder="Masukan Nama Ayah">
+        <input type="text" class="form-control" id="exampleInputNamaAyah1" placeholder="Masukan Nama Ayah" name="nama_ayah">
       </div>
       <div class="form-group">
         <label for="exampleInputNamaIbu1">Nama Ibu</label>
-        <input type="text" class="form-control" id="exampleInputNamaIbu1" placeholder="Masukan Nama Ibu">
+        <input type="text" class="form-control" id="exampleInputNamaIbu1" placeholder="Masukan Nama Ibu" name="nama_ibu">
       </div>
       <fieldset class="form-group">
         <div class="row">
@@ -55,48 +58,48 @@
     </fieldset>
     <div class="form-group">
         <label for="exampleInputAlamat1">Alamat Orang Tua</label>
-        <input type="text" class="form-control" id="exampleInputAlamat1" placeholder="Masukan Alamat Orangtua dan No.Telp">
+        <input type="text" class="form-control" id="exampleInputAlamat1" placeholder="Masukan Alamat Orangtua dan No.Telp" name="alamat_orang_tua">
       </div>
       <div class="form-group">
         <label for="exampleInputNamaWali1">Nama Wali Baptis</label>
-        <input type="text" class="form-control" id="exampleInputNamaWali1" placeholder="Masukan Nama Wali Baptis">
+        <input type="text" class="form-control" id="exampleInputNamaWali1" placeholder="Masukan Nama Wali Baptis" name="nama_wali_baptis">
       </div>
       <div class="form-group">
         <label for="exampleInputTempat1">Tempat Baptis</label>
-        <input type="text" class="form-control" id="exampleInputTempat1" placeholder="Masukan Tempat Baptis">
+        <input type="text" class="form-control" id="exampleInputTempat1" placeholder="Masukan Tempat Baptis" name="tempat_baptis">
       </div>
       <div class="form-group">
         <label for="exampleInputTanggal1">Tanggal Baptis</label>
-        <input type="text" class="form-control" id="exampleInputTanggal1" placeholder="Masukan Tanggal Baptis">
+        <input type="text" class="form-control" id="exampleInputTanggal1" placeholder="Masukan Tanggal Baptis" name="tanggal_baptis">
       </div>
       <div class="form-group">
         <label for="exampleInputNamaPembaptis1">Dibaptis Oleh</label>
-        <input type="text" class="form-control" id="exampleInputPembaptis1" placeholder="Masukan Nama Yang Membaptis">
+        <input type="text" class="form-control" id="exampleInputPembaptis1" placeholder="Masukan Nama Yang Membaptis" name="dibaptis_oleh">
       </div>
-      <div class="custom-file">
-        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+     <!--  <div class="custom-file">
+        <input type="text" class="custom-file-input" id="validatedCustomFile" required name="fc_surat_nikah_orangtua">
         <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Surat Pernikahan Orang Tua.</small>
         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
           <div class="invalid-feedback">Example invalid custom file feedback</div>
       </div>
       <div class="custom-file">
-        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+        <input type="text" class="custom-file-input" id="validatedCustomFile" required name="fc_surat_nikah_sipil_orangtua">
         <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Surat Nikah Sipil Orang Tua (bagi yang menikah di luar gereja).</small>
         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
           <div class="invalid-feedback">Example invalid custom file feedback</div>
       </div>
       <div class="custom-file">
-        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+        <input type="text" class="custom-file-input" id="validatedCustomFile" required name="fc_akte_kelahiran">
         <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Akte Kelahiran atau Keterangan Lahir.</small>
         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
           <div class="invalid-feedback">Example invalid custom file feedback</div>
       </div>
       <div class="custom-file">
-        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+        <input type="text" class="custom-file-input" id="validatedCustomFile" required name="surat_nikah_gereja_wali_baptis">
         <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Surat Nikah Gereja Katolik atau Surat Baptis dari Wali Baptis.</small>
         <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
           <div class="invalid-feedback">Example invalid custom file feedback</div>
-      </div>
+      </div> -->
   		<div class="form-group form-check">
     		<input type="checkbox" class="form-check-input" id="exampleCheck1">
     		<label class="form-check-label" for="exampleCheck1">Check me out</label>

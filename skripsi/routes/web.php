@@ -36,6 +36,12 @@ Route::get('/pengurapan-orang-sakit', function () {
 Route::get('/dashboard-admin', function () {
     return view('content.admin.tabel_bayar');
 });
+Route::prefix('sakramen')->group(function(){
+	Route::post('/baptis_anak', 'SakramenController@store_baptis_anak');
+
+});
+
+// Route::get('/sakramen/admin', 'SakramenController@store_baptis_anak')name('');
 
 // Auth::routes();
 
