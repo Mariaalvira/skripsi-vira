@@ -41,6 +41,21 @@ Route::prefix('sakramen')->group(function(){
 
 });
 
+Route::get('/upload', function () {
+    return view('upload');
+});
+
+Route::prefix('sakramen')->group(function(){
+	Route::post('/Upload', 'UploadController@store_upload');
+
+});
+
+
+Route::get('/sakramen/edit/{id}','SakramenController@edit'); 
+
+Route::post('/sakramen/edit','SakramenController@update');
+
+
 // Route::get('/sakramen/admin', 'SakramenController@store_baptis_anak')name('');
 
 // Auth::routes();

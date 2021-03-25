@@ -144,4 +144,30 @@ class SakramenController extends Controller
 
         return redirect('/perkawinan');
     }
+
+  //  public function edit($id){
+
+    	//$sakramen = DB::tabel('sakramen')->where('sakramen_id',$id)->get();
+    	//return view('edit',['sakramen' => $sakramen]);
+    //}
+    public function update(Request $request){
+    	DB::table('sakramen_baptis')->insert([
+            'nama_diri' => $request->nama_diri,
+            'nama_baptis' => $request->nama_baptis,
+            'tempat_lahir' => $request->tempat_lahir,
+            'umur' => $umur,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'nama_ayah' => $request->nama_ayah,
+            'nama_ibu' => $request->nama_ibu,
+            'status_perkawinan_orangtua' =>
+                $request->status_perkawinan_orangtua,
+            'alamat_orangtua' => $request->alamat_orangtua,
+            'nama_wali_baptis' => $request->nama_wali_baptis,
+            'tanggal_baptis' => $request->tanggal_baptis,
+            'tempat_baptis' => $request->tempat_baptis,
+            'dibaptis_oleh' => $request->dibaptis_oleh,
+    }
+
+    return redirect('/sakramen')
+    
 }

@@ -1,0 +1,1 @@
+<a href="/sakramen/edit/{{ $p->sakramen_id}}">Edit</a>
