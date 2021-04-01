@@ -166,8 +166,9 @@ class SakramenController extends Controller
             'tanggal_baptis' => $request->tanggal_baptis,
             'tempat_baptis' => $request->tempat_baptis,
             'dibaptis_oleh' => $request->dibaptis_oleh,
+   ]);  return redirect('/sakramen');
     }
 
-    return redirect('/sakramen')
+   
     
 }
