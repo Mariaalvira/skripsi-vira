@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-            <form action="/sakramen/baptis_anak" method="post">
+            <form action="/baptis_anak/create" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <input type="hidden" name="umur" value="anak">
@@ -105,33 +105,25 @@
                     <input type="text" class="form-control" id="exampleInputPembaptis1"
                         placeholder="Masukan Nama Yang Membaptis" name="dibaptis_oleh">
                 </div>
-                <!--  <div class="custom-file">
-                                                                                                                        <input type="text" class="custom-file-input" id="validatedCustomFile" required name="fc_surat_nikah_orangtua">
-                                                                                                                        <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Surat Pernikahan Orang Tua.</small>
-                                                                                                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                                                                                                          <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                                                                                                      </div>
-                                                                                                                      <div class="custom-file">
-                                                                                                                        <input type="text" class="custom-file-input" id="validatedCustomFile" required name="fc_surat_nikah_sipil_orangtua">
-                                                                                                                        <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Surat Nikah Sipil Orang Tua (bagi yang menikah di luar gereja).</small>
-                                                                                                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                                                                                                          <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                                                                                                      </div>
-                                                                                                                      <div class="custom-file">
-                                                                                                                        <input type="text" class="custom-file-input" id="validatedCustomFile" required name="fc_akte_kelahiran">
-                                                                                                                        <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Akte Kelahiran atau Keterangan Lahir.</small>
-                                                                                                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                                                                                                          <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                                                                                                      </div>
-                                                                                                                      <div class="custom-file">
-                                                                                                                        <input type="text" class="custom-file-input" id="validatedCustomFile" required name="surat_nikah_gereja_wali_baptis">
-                                                                                                                        <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Surat Nikah Gereja Katolik atau Surat Baptis dari Wali Baptis.</small>
-                                                                                                                        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                                                                                                          <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                                                                                                      </div> -->
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <div class="form-group">
+                    <label for="exampleInputNamaPembaptis1">Dibaptis Oleh</label>
+                    <input type="file" class="form-control" id="exampleInputPembaptis1"
+                        placeholder="Masukan Nama Yang Membaptis" name="fc_surat_nikah_gereja_orangtua">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputNamaPembaptis1">Dibaptis Oleh</label>
+                    <input type="file" class="form-control" id="exampleInputPembaptis1"
+                        placeholder="Masukan Nama Yang Membaptis" name="fc_surat_nikah_sipil_orangtua">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputNamaPembaptis1">Dibaptis Oleh</label>
+                    <input type="file" class="form-control" id="exampleInputPembaptis1"
+                        placeholder="Masukan Nama Yang Membaptis" name="fc_akte_kelahiran">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputNamaPembaptis1">Dibaptis Oleh</label>
+                    <input type="file" class="form-control" id="exampleInputPembaptis1"
+                        placeholder="Masukan Nama Yang Membaptis" name="fc_surat_nikah_gereja_wali_baptis">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

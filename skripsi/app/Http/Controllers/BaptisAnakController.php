@@ -5,20 +5,39 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
-class SakramenController extends Controller
+
+class BaptisAnakController extends Controller
 {
-    // public function index()
-    // {
-    // 	$baptis_anak = DB::table('baptis_anak')->get();
-
-    // 	return view('index',['baptis_anak' => $baptis_anak]);
-    // }
+    public function index()
+    {
+    	return view('content.form.baptis_anak');
+    }
 
     public function store_baptis_anak(Request $request)
     {
         $hari_lahir = $request->tanggal_lahir;
         $umur = Carbon::parse($hari_lahir)->age;
+
+        $fc_surat_nikah_gereja = $request->file('fc_surat_nikah_gereja_orangtua');
+        $fc_surat_nikah_sipil = $request->file('fc_surat_nikah_sipil_orangtua');
+        $fc_surat_akte_kelahiran = $request->file('fc_akte_kelahiran');
+        $fc_surat_nikah_wali = $request->file('fc_surat_nikah_gereja_wali_baptis');
+
+        $save_fc_surat_nikah_gereja = $fc_surat_nikah_gereja->getClientOriginalName();
+        $save_fc_surat_nikah_sipil = $fc_surat_akte_kelahiran->getClientOriginalName();
+        $save_fc_surat_akte_kelahiran = $fc_surat_nikah_sipil->getClientOriginalName();
+        $save_fc_surat_nikah_wali = $fc_surat_nikah_wali->getClientOriginalName();
+
+        $tujuan_upload = 'gambar';
+
+        $fc_surat_nikah_gereja->move($tujuan_upload,$save_fc_surat_nikah_gereja);
+        $fc_surat_nikah_sipil->move($tujuan_upload,$save_fc_surat_nikah_sipil);
+        $fc_surat_akte_kelahiran->move($tujuan_upload,$save_fc_surat_akte_kelahiran);
+        $fc_surat_nikah_wali->move($tujuan_upload,$save_fc_surat_nikah_wali);
+
+
         DB::table('sakramen_baptis')->insert([
             'nama_diri' => $request->nama_diri,
             'nama_baptis' => $request->nama_baptis,
@@ -27,21 +46,21 @@ class SakramenController extends Controller
             'tanggal_lahir' => $request->tanggal_lahir,
             'nama_ayah' => $request->nama_ayah,
             'nama_ibu' => $request->nama_ibu,
-            'status_perkawinan_orangtua' =>
-                $request->status_perkawinan_orangtua,
+            'status_perkawinan_orangtua' =>$request->status_perkawinan_orangtua,
             'alamat_orangtua' => $request->alamat_orangtua,
             'nama_wali_baptis' => $request->nama_wali_baptis,
             'tanggal_baptis' => $request->tanggal_baptis,
             'tempat_baptis' => $request->tempat_baptis,
             'dibaptis_oleh' => $request->dibaptis_oleh,
-            // 'fc_surat_nikah_gereja_orangtua'=>$request->fc_surat_nikah_gereja_orangtua,
-            // 'fc_surat_nikah_sipil_orangtua'=>$request->fc_surat_nikah_sipil_orangtua,
-            // 'fc_akte_kelahiran'=>$request->fc_akte_kelahiran,
-            // 'fc_surat_nikah_gereja_wali_baptis'=>$request->fc_surat_nikah_gereja_wali_baptis
+            'fc_surat_pernikahan_gereja_orangtua' => $save_fc_surat_nikah_gereja,
+            'fc_surat_nikah_sipil_orangtua' => $save_fc_surat_nikah_sipil,
+            'fc_akte_kelahian' => $save_fc_surat_akte_kelahiran,
+            'fc_surat_nikah_gereja_wali_baptis' => $save_fc_surat_nikah_wali
         ]);
 
-        return redirect('/baptis_anak');
+        return response()->json('berhasil upload dan simpan');
     }
+
 
     public function store_baptis_dewasa(Request $request)
     {
@@ -169,6 +188,6 @@ class SakramenController extends Controller
    ]);  return redirect('/sakramen');
     }
 
-   
-    
+
+
 }
