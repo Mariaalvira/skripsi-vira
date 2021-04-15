@@ -11,9 +11,18 @@
     		<input type="text" class="form-control" id="exampleInputNamaBaptis1" placeholder="Masukan Nama Baptis" name="nama_baptis">
   		</div>
       <div class="form-group">
-        <label for="exampleInputTtl1">Tempat Tanggal Lahir</label>
-        <input type="text" class="form-control" id="exampleInputTtl1" placeholder="Masukan Tempat Tanggal Lahir" name="tempat_tanggal_lahir">
-      </div>
+                    <label for="exampleInputTtl1">Tempat Tanggal Lahir</label>
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="text" class="form-control" id="exampleInputTtl1" placeholder="Masukan Tempat Lahir"
+                                name="tempat_lahir">
+                        </div>
+                        <div class="col-6">
+                            <input type="date" class="form-control" id="exampleInputTtl1"
+                                placeholder="Masukan Tanggal Lahir" name="tanggal_lahir">
+                        </div>
+                    </div>
+                </div>
       <div class="form-group">
         <label for="exampleInputTtl1">Tempat dan Tanggal Baptis</label>
         <input type="text" class="form-control" id="exampleInputTtl1" placeholder="Masukan Tempat Tanggal Lahir" name="tempat_dan_tanggal_baptis">

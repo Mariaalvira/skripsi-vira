@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSakramenBaptisTable extends Migration
+class CreateSakramenBaptisAnakTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateSakramenBaptisTable extends Migration
      */
     public function up()
     {
-        Schema::create('sakramen_baptis', function (Blueprint $table) {
-            $table->id('id_sakramen_baptis');
+        Schema::create('sakramen_baptis_anak', function (Blueprint $table) {
+            $table->id('id');
             $table->string('nama_diri');
             $table->string('nama_baptis');
             $table->string('tempat_lahir');
@@ -25,14 +25,13 @@ class CreateSakramenBaptisTable extends Migration
             $table->string('status_perkawinan_orangtua');
             $table->string('alamat_orangtua');
             $table->string('nama_wali_baptis');
-            $table->string('tempat_baptis');
             $table->date('tanggal_baptis');
             $table->string('dibaptis_oleh');
             $table->string('fc_surat_pernikahan_gereja_orangtua');
             $table->string('fc_surat_nikah-sipil_orangtua');
-            $table->string('fc_akte_kelahian');
+            $table->string('fc_akte_kelahiran');
             $table->string('fc_surat_nikah_gereja_wali_baptis');
-            $table->string('fc_surat_ganti_nama');
+            $table->date('tanggal_pelaksanaan');
             $table->timestamps();
         });
     }
@@ -44,6 +43,6 @@ class CreateSakramenBaptisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sakramen_baptis');
+        Schema::dropIfExists('sakramen_baptis_anak');
     }
 }

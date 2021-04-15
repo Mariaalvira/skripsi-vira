@@ -14,7 +14,7 @@ class CreateSakramenKomuniPertamaTable extends Migration
     public function up()
     {
         Schema::create('sakramen_komuni_pertama', function (Blueprint $table) {
-            $table->id('id_sakramen_komuni_pertama');
+            $table->id('id');
             $table->string('nama_diri');
             $table->string('nama_baptis');
             $table->string('tempat_lahir');
@@ -30,6 +30,7 @@ class CreateSakramenKomuniPertamaTable extends Migration
             $table->string('alamat_orangtua');
             $table->char('no_telepon', '12');
             $table->string('fc_surat_baptis');
+            $table->date('tanggal_pelaksanaan');
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ class CreateSakramenPerkawinanTable extends Migration
     public function up()
     {
         Schema::create('sakramen_perkawinan', function (Blueprint $table) {
-            $table->id('id_sakramen_perkawinan');
+            $table->id('id');
             $table->string('nama_lengkap_suami');
             $table->string('tempat_lahir_suami');
             $table->date('tanggal_lahir_suami');

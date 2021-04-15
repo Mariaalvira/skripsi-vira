@@ -106,24 +106,24 @@
                         placeholder="Masukan Nama Yang Membaptis" name="dibaptis_oleh">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputNamaPembaptis1">Dibaptis Oleh</label>
+                    <label for="exampleInputNamaPembaptis1">Fc Surat Pernikaha Gereja Orang Tua</label>
                     <input type="file" class="form-control" id="exampleInputPembaptis1"
-                        placeholder="Masukan Nama Yang Membaptis" name="fc_surat_nikah_gereja_orangtua">
+                        placeholder="Masukan Fc surat pernikahan orang tua" name="fc_surat_nikah_gereja_orangtua">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputNamaPembaptis1">Dibaptis Oleh</label>
+                    <label for="exampleInputNamaPembaptis1">Fc Surat Nikah Sipil Orang Tua (Bagi yang menikah di luar Gereja)</label>
                     <input type="file" class="form-control" id="exampleInputPembaptis1"
-                        placeholder="Masukan Nama Yang Membaptis" name="fc_surat_nikah_sipil_orangtua">
+                        placeholder="Masukan Fc Surat Nikah Sipil Orang Tua" name="fc_surat_nikah_sipil_orangtua">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputNamaPembaptis1">Dibaptis Oleh</label>
+                    <label for="exampleInputNamaPembaptis1">Fc Akte Kelahiran atau Surat Ketrangan Lahir</label>
                     <input type="file" class="form-control" id="exampleInputPembaptis1"
-                        placeholder="Masukan Nama Yang Membaptis" name="fc_akte_kelahiran">
+                        placeholder="Masukan Fc Akte Kelahiran atau Surat Ketrangan Lahir" name="fc_akte_kelahiran">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputNamaPembaptis1">Dibaptis Oleh</label>
+                    <label for="exampleInputNamaPembaptis1">Fc Akte Surat Nikah Gereja Katolik Wali Baptis</label>
                     <input type="file" class="form-control" id="exampleInputPembaptis1"
-                        placeholder="Masukan Nama Yang Membaptis" name="fc_surat_nikah_gereja_wali_baptis">
+                        placeholder="Masukan Fc Akte Surat Nikah Gereja Katolik Wali Baptis" name="fc_surat_nikah_gereja_wali_baptis">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
