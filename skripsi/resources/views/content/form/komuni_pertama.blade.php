@@ -46,11 +46,9 @@
         <label for="exampleInputTelp1">Nomor Telepon/ Hp</label>
         <input type="text" class="form-control" id="exampleInputTelp1" placeholder="Masukan Nomor TeLepon/ Hp">
       </div>
-      <div class="custom-file">
-        <input type="text" class="custom-file-input" id="validatedCustomFile" required>
-        <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Surat Baptis.</small>
-        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-          <div class="invalid-feedback">Example invalid custom file feedback</div>
+      <div class="form-group">
+        <label for="exampleInputNamaPembaptis1">Fc Surat Baptis</label>
+        <input type="file" class="form-control" id="exampleInputPembaptis1" placeholder="Masukan Fc Surat Baptis" name="fc_surat_baptis">
       </div>
   		<div class="form-group form-check">
     		<input type="checkbox" class="form-check-input" id="exampleCheck1">

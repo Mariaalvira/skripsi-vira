@@ -81,29 +81,21 @@
         <label for="exampleInputPemberkatan1">Pemberkatan dan Pembaptisan</label>
         <input type="text" class="form-control" id="exampleInpuPemberkatan1" placeholder="Masukan Pemberkatan dan Pembaptisan">
       </div>
-      <div class="custom-file">
-        <input type="text" class="custom-file-input" id="validatedCustomFile" required>
-        <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Akta Kelahiran/ Surat Keterangan Lahir Calon Baptis.</small>
-        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-          <div class="invalid-feedback">Example invalid custom file feedback</div>
+      <div class="form-group">
+        <label for="exampleInputNamaPembaptis1">Fc Akte Kelahiran</label>
+        <input type="file" class="form-control" id="exampleInputPembaptis1" placeholder="Masukan Fc Akte Kelahiran" name="fc_akte_kelahiran">
       </div>
-      <div class="custom-file">
-        <input type="text" class="custom-file-input" id="validatedCustomFile" required>
-        <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Surat Ganti Nama(Kalau punya/ada).</small>
-        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-          <div class="invalid-feedback">Example invalid custom file feedback</div>
+       <div class="form-group">
+        <label for="exampleInputNamaPembaptis1">Fc Surat Ganti Nama</label>
+        <input type="file" class="form-control" id="exampleInputPembaptis1" placeholder="Masukan Fc Surat Ganti Nama" name="fc_surat_ganti_nama">
       </div>
-      <div class="custom-file">
-        <input type="text" class="custom-file-input" id="validatedCustomFile" required>
-        <small id="emailHelp" class="form-text text-muted">Masukan Surat Nikah (Gereja/KUA/Catatan Sipil (kalau sudah kawin/ nikah)).</small>
-        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-          <div class="invalid-feedback">Example invalid custom file feedback</div>
+      <div class="form-group">
+        <label for="exampleInputNamaPembaptis1">Fc Surat Nikah Calon Baptis</label>
+        <input type="file" class="form-control" id="exampleInputPembaptis1" placeholder="Masukan Fc Akte Surat Nikah" name="fc_surat_nikah">
       </div>
-      <div class="custom-file">
-        <input type="text" class="custom-file-input" id="validatedCustomFile" required>
-        <small id="emailHelp" class="form-text text-muted">Masukan file Fotocopy Surat Nikah Gereja Katolik atau Surat Baptis dari Wali Baptis.</small>
-        <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-          <div class="invalid-feedback">Example invalid custom file feedback</div>
+      <div class="form-group">
+        <label for="exampleInputNamaPembaptis1">Fc Surat Nikah Wali Baptis</label>
+        <input type="file" class="form-control" id="exampleInputPembaptis1" placeholder="Masukan Fc Surat Nikah Wali Baptis" name="fc_surat_nikah_wali_baptis">
       </div>
   		<div class="form-group form-check">
     		<input type="checkbox" class="form-check-input" id="exampleCheck1">

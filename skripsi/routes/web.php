@@ -21,3 +21,13 @@ Route::group(['prefix' => 'baptis-anak'], function(){
     Route::get('', 'BaptisAnakController@index');
 	Route::get('/create', 'BaptisAnakController@store_baptis_anak');
 });
+
+Route::group(['prefix' => 'baptis-dewasa'], function(){
+    Route::get('', 'BaptisDewasaController@index');
+	Route::get('/create', 'BaptisDewasaController@store_baptis_dewasa');
+});
+
+Route::group(['prefix' => 'komuni'], function(){
+    Route::get('', 'KomuniController@index');
+	Route::get('/create', 'BaptisDewasaController@store_komuni');
+});
