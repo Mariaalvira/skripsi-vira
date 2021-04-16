@@ -17,6 +17,8 @@ class PenguatanController extends Controller
 
     public function store_penguatan(Request $request)
     {
+    	$tanggal_pelaksanaan = Carbon::now()->addDay(3);
+    	
     	$hari_lahir = $request->tanggal_lahir;
         $umur = Carbon::parse($hari_lahir)->age;
 
@@ -42,6 +44,8 @@ class PenguatanController extends Controller
             'no_telepon' => $request->no_telepon,
             'st_pelindung_penguatan' => $request->st_pelindung_penguatan,
             'wali_penguatan' => $request->wali_penguatan,
+            'tanggal_pelaksanaan' => $tanggal_pelaksanaan,
+            'status_pembayaran' => 'belum'
         ]);
 
         return redirect('/penguatan');

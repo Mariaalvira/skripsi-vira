@@ -40,6 +40,7 @@ class CreateSakramenPerkawinanTable extends Migration
             $table->string('gereja_pemberkatan_nikah');
             $table->date('tanggal');
             $table->string('pukul');
+            $table->string('status_pembayaran');
             $table->timestamps();
         });
     }

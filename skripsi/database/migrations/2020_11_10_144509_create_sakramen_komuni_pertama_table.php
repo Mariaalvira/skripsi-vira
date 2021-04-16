@@ -31,6 +31,7 @@ class CreateSakramenKomuniPertamaTable extends Migration
             $table->char('no_telepon', '12');
             $table->string('fc_surat_baptis');
             $table->date('tanggal_pelaksanaan');
+            $table->string('status_pembayaran');
             $table->timestamps();
         });
     }

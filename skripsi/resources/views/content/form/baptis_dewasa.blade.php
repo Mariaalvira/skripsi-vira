@@ -1,7 +1,8 @@
 @extends('layouts.user')
 
 @section('content')
-	<form>
+	<form action="/baptis-dewasa/create" method="post" enctype="multipart/form-data">
+    {{ csrf_field() }}
   		<div class="form-group">
   			<label for="exampleInputNama1">Nama Diri</label>
     		<input type="text" class="form-control" id="exampleInputNama1" aria-describedby="namaHelp" placeholder="Masukan nama">

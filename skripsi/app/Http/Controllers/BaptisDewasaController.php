@@ -18,6 +18,8 @@ class BaptisDewasaController extends Controller
     public function store_baptis_dewasa(Request $request)
     {
 
+    	$tanggal_pelaksanaan = Carbon::now()->addDay(3);
+
     	$hari_lahir = $request->tanggal_lahir;
         $umur = Carbon::parse($hari_lahir)->age;
 

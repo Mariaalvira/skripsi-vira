@@ -19,15 +19,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'baptis-anak'], function(){
     Route::get('', 'BaptisAnakController@index');
-	Route::get('/create', 'BaptisAnakController@store_baptis_anak');
+	Route::post('/create', 'BaptisAnakController@store_baptis_anak');
 });
 
 Route::group(['prefix' => 'baptis-dewasa'], function(){
     Route::get('', 'BaptisDewasaController@index');
-	Route::get('/create', 'BaptisDewasaController@store_baptis_dewasa');
+	Route::post('/create', 'BaptisDewasaController@store_baptis_dewasa');
 });
 
-Route::group(['prefix' => 'komuni'], function(){
+Route::group(['prefix' => 'komuni-pertama'], function(){
     Route::get('', 'KomuniController@index');
-	Route::get('/create', 'BaptisDewasaController@store_komuni');
+	Route::post('/create', 'KomuniController@store_komuni');
 });

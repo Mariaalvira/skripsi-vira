@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-            <form action="/baptis_anak/create" method="post" enctype="multipart/form-data">
+            <form action="/baptis-anak/create" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <input type="hidden" name="umur" value="anak">
@@ -94,11 +94,6 @@
                     <label for="exampleInputTempat1">Tempat Baptis</label>
                     <input type="text" class="form-control" id="exampleInputTempat1" placeholder="Masukan Tempat Baptis"
                         name="tempat_baptis">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputTanggal1">Tanggal Baptis</label>
-                    <input type="date" class="form-control" id="exampleInputTanggal1" placeholder="Masukan Tanggal Baptis"
-                        name="tanggal_baptis">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputNamaPembaptis1">Dibaptis Oleh</label>

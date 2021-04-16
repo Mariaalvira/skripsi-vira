@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\BaptisAnak;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -19,6 +20,8 @@ class BaptisAnakController extends Controller
     {
         $hari_lahir = $request->tanggal_lahir;
         $umur = Carbon::parse($hari_lahir)->age;
+
+        $tanggal_pelaksanaan = Carbon::now()->addDay(3);
 
         $fc_surat_nikah_gereja = $request->file('fc_surat_nikah_gereja_orangtua');
         $fc_surat_nikah_sipil = $request->file('fc_surat_nikah_sipil_orangtua');
@@ -37,8 +40,7 @@ class BaptisAnakController extends Controller
         $fc_surat_akte_kelahiran->move($tujuan_upload,$save_fc_surat_akte_kelahiran);
         $fc_surat_nikah_wali->move($tujuan_upload,$save_fc_surat_nikah_wali);
 
-
-        DB::table('sakramen_baptis')->insert([
+        DB::table('sakramen_baptis_anak')->insert([
             'nama_diri' => $request->nama_diri,
             'nama_baptis' => $request->nama_baptis,
             'tempat_lahir' => $request->tempat_lahir,
@@ -49,13 +51,14 @@ class BaptisAnakController extends Controller
             'status_perkawinan_orangtua' =>$request->status_perkawinan_orangtua,
             'alamat_orangtua' => $request->alamat_orangtua,
             'nama_wali_baptis' => $request->nama_wali_baptis,
-            'tanggal_baptis' => $request->tanggal_baptis,
             'tempat_baptis' => $request->tempat_baptis,
             'dibaptis_oleh' => $request->dibaptis_oleh,
             'fc_surat_pernikahan_gereja_orangtua' => $save_fc_surat_nikah_gereja,
             'fc_surat_nikah_sipil_orangtua' => $save_fc_surat_nikah_sipil,
-            'fc_akte_kelahian' => $save_fc_surat_akte_kelahiran,
-            'fc_surat_nikah_gereja_wali_baptis' => $save_fc_surat_nikah_wali
+            'fc_akte_kelahiran' => $save_fc_surat_akte_kelahiran,
+            'fc_surat_nikah_gereja_wali_baptis' => $save_fc_surat_nikah_wali,
+            'tanggal_pelaksanaan' => $tanggal_pelaksanaan,
+            'status_pembayaran' => 'belum'
         ]);
 
         return response()->json('berhasil upload dan simpan');

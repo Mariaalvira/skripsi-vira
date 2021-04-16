@@ -17,10 +17,14 @@ class PerkawinanController extends Controller
 
      public function store_perkawinan(Request $request)
     {
+    	
         DB::table('sakramen_perkawinan')->insert([
-            'nama_lengkap' => $request->nama_diri,
+            'nama_lengkap' => $request->nama_lengkap,
             'tempat_lahir' => $request->tempat_lahir,
             'tanggal_lahir' => $request->tanggal_lahir,
+            'tempat_baptis' => $request->tempat_baptis,
+            'tanggal_baptis' => $request->tanggal_baptis,
+            'pekerjaan' => $request->pekerjaan,
             'nama_ayah' => $request->nama_ayah,
             'nama_ibu' => $request->nama_ibu,
             'lingkungan' => $request->lingkungan,

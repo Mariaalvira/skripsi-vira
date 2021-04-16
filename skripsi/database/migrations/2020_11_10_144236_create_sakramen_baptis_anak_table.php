@@ -25,12 +25,13 @@ class CreateSakramenBaptisAnakTable extends Migration
             $table->string('status_perkawinan_orangtua');
             $table->string('alamat_orangtua');
             $table->string('nama_wali_baptis');
-            $table->date('tanggal_baptis');
+            $table->string('tempat_baptis');
             $table->string('dibaptis_oleh');
             $table->string('fc_surat_pernikahan_gereja_orangtua');
-            $table->string('fc_surat_nikah-sipil_orangtua');
+            $table->string('fc_surat_nikah_sipil_orangtua');
             $table->string('fc_akte_kelahiran');
             $table->string('fc_surat_nikah_gereja_wali_baptis');
+            $table->string('status_pembayaran');
             $table->date('tanggal_pelaksanaan');
             $table->timestamps();
         });
