@@ -26,7 +26,7 @@ class CreateSakramenBaptisDewasaTable extends Migration
             $table->string('mengikuti_pelajaran_agama_sejak');
             $table->string('mengikuti_perayaan_ekaristi_sejak');
             $table->string('mengikuti_kegiatan_lingkungan_sejak');
-            $table->date('nama_guru_agama_yang_mengajar');
+            $table->string('nama_guru_agama_yang_mengajar');
             $table->string('nama_wali_baptis');
             $table->string('pemberkatan_dan_pembaptisan');
             $table->string('fc_akte_kelahiran');

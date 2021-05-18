@@ -18,14 +18,14 @@ class PenguatanController extends Controller
     public function store_penguatan(Request $request)
     {
     	$tanggal_pelaksanaan = Carbon::now()->addDay(3);
-    	
+
     	$hari_lahir = $request->tanggal_lahir;
         $umur = Carbon::parse($hari_lahir)->age;
 
         $fc_surat_baptis = $request->file('fc_surat_baptis');
 
         $save_fc_surat_baptis = $fc_surat_baptis->getClientOriginalName();
-        
+
         $tujuan_upload = 'gambar_penguatan';
 
         $fc_surat_baptis->move($tujuan_upload,$save_fc_surat_baptis);
@@ -50,3 +50,4 @@ class PenguatanController extends Controller
 
         return redirect('/penguatan');
     }
+}

@@ -72,8 +72,8 @@
                                     <strong>Pendaftaran Sakramen</strong>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Baptis Anak</a>
-                                    <a class="dropdown-item" href="#">Baptis Dewasa</a>
+                                    <a class="dropdown-item" href="{{ url('baptis-anak') }}">Baptis Anak</a>
+                                    <a class="dropdown-item" href="{{ url('baptis-dewasa') }}">Baptis Dewasa</a>
                                     <a class="dropdown-item" href="#">Komuni Pertama</a>
                                     <a class="dropdown-item" href="#">Penguatan</a>
                                     <a class="dropdown-item" href="#">Perkawinan</a>

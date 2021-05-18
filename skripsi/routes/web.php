@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+Route::get('/', function () {
+    return view('home');
+});
 
 Route::group(['prefix' => 'baptis-anak'], function(){
     Route::get('', 'BaptisAnakController@index');
@@ -30,4 +30,14 @@ Route::group(['prefix' => 'baptis-dewasa'], function(){
 Route::group(['prefix' => 'komuni-pertama'], function(){
     Route::get('', 'KomuniController@index');
 	Route::post('/create', 'KomuniController@store_komuni');
+});
+
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('', 'AdminController@index');
+    // baptis anak
+    Route::get('/baptis-anak', 'BaptisAnakController@show_baptis_anak');
+	// Route::post('/create', 'KomuniController@store_komuni');
+
+    // baptis dewasa
+    Route::get('/baptis-dewasa', 'BaptisDewasaController@show_baptis_dewasa');
 });

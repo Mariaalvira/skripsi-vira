@@ -17,7 +17,7 @@ class PerkawinanController extends Controller
 
      public function store_perkawinan(Request $request)
     {
-    	
+
         DB::table('sakramen_perkawinan')->insert([
             'nama_lengkap' => $request->nama_lengkap,
             'tempat_lahir' => $request->tempat_lahir,
@@ -45,3 +45,4 @@ class PerkawinanController extends Controller
 
         return redirect('/perkawinan');
     }
+}

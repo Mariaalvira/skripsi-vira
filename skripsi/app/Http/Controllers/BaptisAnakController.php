@@ -16,6 +16,11 @@ class BaptisAnakController extends Controller
     	return view('content.form.baptis_anak');
     }
 
+    public function show_baptis_anak(){
+        $datas = BaptisAnak::get();
+        return view('content.admin.table.tabel_baptis_anak', compact('datas'));
+    }
+
     public function store_baptis_anak(Request $request)
     {
         $hari_lahir = $request->tanggal_lahir;

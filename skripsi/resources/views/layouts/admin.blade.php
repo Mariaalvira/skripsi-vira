@@ -12,33 +12,36 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+
     <link href="{{ asset('css/styleadmin.css') }}" rel="stylesheet">
     <style type="text/css">
     body {
       font-family: "Lucida Sans Unicode", "Lucida Grande", "Segoe Ui";
     }
-    
+
     /* Table */
     table {
       margin: auto;
       font-family: "Lucida Sans Unicode", "Lucida Grande", "Segoe Ui";
       font-size: 12px;
-
+      width: 100%;
+    }
+    .main {
+        margin-left: 250px;
     }
     .demo-table {
       border-collapse: collapse;
       font-size: 13px;
     }
-    .demo-table th, 
+    .demo-table th,
     .demo-table td {
       border-bottom: 1px solid #e1edff;
       border-left: 1px solid #e1edff;
       padding: 7px 17px;
     }
-    .demo-table th, 
+    .demo-table th,
     .demo-table td:last-child {
       border-right: 1px solid #e1edff;
     }
@@ -52,7 +55,7 @@
       caption-side: top;
       margin-bottom: 10px;
     }
-    
+
     /* Table Header */
     .demo-table thead th {
       background-color: #508abb;
@@ -60,12 +63,12 @@
       border-color: #6ea1cc !important;
       text-transform: uppercase;
     }
-    
+
     /* Table Body */
     .demo-table tbody td {
       color: #353535;
     }
-    
+
     .demo-table tbody tr:nth-child(odd) td {
       background-color: #f4fbff;
     }
@@ -98,25 +101,35 @@
             <li><a href="#"><i class="fa fa-user"></i> Daftar Umat</a></li>
             <li><a href="#"><i class="fa fa-money"></i> Pembayaran</a></li>
             <li><a href="#"><i class="fa fa-bell"></i> Notifikasi</a></li>
-            <li><a href="#"><i class="fa fa-check"></i> Sakramen</a></li>
-            <!-- <li>
+            <li>
+                <a href="#"><i class="fa fa-check"></i> <span>Sakramen</span> <i class="fa fa-angle-down pull-right"></i></a>
+                <ul class="menu-content">
+                    <li><a href="{{ url('admin/baptis-anak') }}">Baptis Anak</a></li>
+                    <li><a href="{{ url('admin/baptis-dewasa') }}">Baptis Dewasa</a></li>
+                    <li><a href="">Penguatan</a></li>
+                    <li><a href="">Perkawinan</a></li>
+                    <li><a href="">Komuni</a></li>
+                </ul>
+            </li>
+            {{-- <li>
               <a href="#"><i class="fa fa-cube"></i> <span>Data Master</span> <i class="fa fa-angle-down pull-right"></i></a>
               <ul>
                 <li><a href="">Umat</a></li>
                 <li><a href="">Kategori Sakramen</a></li>
                 <li><a href="">Pembayaran</a></li>
               </ul>
-            </li> -->
+            </li> --}}
           </ul>
         </menu>
       </aside>
-      <main class="py-4">
-            @yield('content')
-        </main>
+      <div class="main">
+        @yield('content')
+      </div>
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!– Include all compiled plugins (below), or include individual files as needed –>
-    <!– Latest compiled and minified JavaScript –>
+    {{-- <!– Include all compiled plugins (below), or include individual files as needed –>
+    <!– Latest compiled and minified JavaScript –> --}}
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
     $("menu li > a").click(function(e){
