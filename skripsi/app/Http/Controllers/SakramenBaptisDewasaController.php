@@ -9,7 +9,7 @@ use App\BaptisDewasa;
 use Illuminate\Support\Facades\Storage;
 
 
-class BaptisDewasaController extends Controller
+class SakramenBaptisDewasaController extends Controller
 {
     public function index()
     {
@@ -17,7 +17,7 @@ class BaptisDewasaController extends Controller
     }
 
     public function show_baptis_dewasa(){
-        $datas = BaptisDewasa::get();
+        $datas = BaptisDewasa::where('status_pembayaran', 'belum')->get();
         return view('content.admin.table.table_baptis_dewasa', compact('datas'));
     }
 

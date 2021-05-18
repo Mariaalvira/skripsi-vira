@@ -18,26 +18,37 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'baptis-anak'], function(){
-    Route::get('', 'BaptisAnakController@index');
-	Route::post('/create', 'BaptisAnakController@store_baptis_anak');
+    Route::get('', 'SakramenBaptisAnakController@index');
+	Route::post('/create', 'SakramenBaptisAnakController@store_baptis_anak');
 });
 
 Route::group(['prefix' => 'baptis-dewasa'], function(){
-    Route::get('', 'BaptisDewasaController@index');
-	Route::post('/create', 'BaptisDewasaController@store_baptis_dewasa');
+    Route::get('', 'SakramenBaptisDewasaController@index');
+	Route::post('/create', 'SakramenBaptisDewasaController@store_baptis_dewasa');
 });
 
 Route::group(['prefix' => 'komuni-pertama'], function(){
-    Route::get('', 'KomuniController@index');
-	Route::post('/create', 'KomuniController@store_komuni');
+    Route::get('', 'SakramenKomuniController@index');
+	Route::post('/create', 'SakramenKomuniController@store_komuni');
+});
+
+Route::group(['prefix' => 'perkawinan'], function(){
+    Route::get('', 'SakramenPerkawinanController@index');
+	Route::post('/create', 'SakramenPerkawinanController@store_perkawinan');
 });
 
 Route::group(['prefix' => 'admin'], function(){
     Route::get('', 'AdminController@index');
     // baptis anak
-    Route::get('/baptis-anak', 'BaptisAnakController@show_baptis_anak');
+    Route::get('/baptis-anak', 'SakramenBaptisAnakController@show_baptis_anak');
 	// Route::post('/create', 'KomuniController@store_komuni');
 
     // baptis dewasa
-    Route::get('/baptis-dewasa', 'BaptisDewasaController@show_baptis_dewasa');
+    Route::get('/baptis-dewasa', 'SakramenBaptisDewasaController@show_baptis_dewasa');
+
+    // sakramen perkawinan
+    Route::get('/perkawinan', 'SakramenPerkawinanController@show_perkawinan');
+
+    // sakramen komuni pertama
+    Route::get('/komuni-pertama', 'SakramenKomuniController@show_komuni_pertama');
 });

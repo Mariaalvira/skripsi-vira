@@ -74,9 +74,9 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ url('baptis-anak') }}">Baptis Anak</a>
                                     <a class="dropdown-item" href="{{ url('baptis-dewasa') }}">Baptis Dewasa</a>
-                                    <a class="dropdown-item" href="#">Komuni Pertama</a>
+                                    <a class="dropdown-item" href="{{ url('komuni-pertama') }}">Komuni Pertama</a>
                                     <a class="dropdown-item" href="#">Penguatan</a>
-                                    <a class="dropdown-item" href="#">Perkawinan</a>
+                                    <a class="dropdown-item" href="{{ url('perkawinan') }}">Perkawinan</a>
                                 </div>
                             </li>
                             <li class="nav-item">

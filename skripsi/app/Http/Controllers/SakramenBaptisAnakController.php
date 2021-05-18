@@ -9,7 +9,7 @@ use App\BaptisAnak;
 use Illuminate\Support\Facades\Storage;
 
 
-class BaptisAnakController extends Controller
+class SakramenBaptisAnakController extends Controller
 {
     public function index()
     {
@@ -17,7 +17,7 @@ class BaptisAnakController extends Controller
     }
 
     public function show_baptis_anak(){
-        $datas = BaptisAnak::get();
+        $datas = BaptisAnak::where('status_pembayaran', 'belum')->get();
         return view('content.admin.table.tabel_baptis_anak', compact('datas'));
     }
 

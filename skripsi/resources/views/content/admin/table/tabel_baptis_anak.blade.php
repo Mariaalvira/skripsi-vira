@@ -12,7 +12,6 @@
                     <th scope="col" class="text-center">Nama Baptis</th>
                     <th scope="col" class="text-center">Nama Wali Baptis</th>
                     <th scope="col" class="text-center">Pembaktis</th>
-                    <th scope="col" class="text-center">Tempat Baptis</th>
                     <th scope="col" class="text-center">Email</th>
                     <th scope="col" colspan="2" class="text-center">Action</th>
                 </tr>
@@ -25,10 +24,12 @@
                     <td>{{ $data->nama_baptis }}</td>
                     <td>{{ $data->nama_wali_baptis }}</td>
                     <td>{{ $data->dibaptis_oleh }}</td>
-                    <td>{{ $data->tempat_baptis }}</td>
                     <td>maria123@gmail.com</td>
-                    <td><a type="button" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
-                    <td><a type="button" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+                    <td>
+                        <a class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="edit data"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="send email"><i class="fa fa-envelope"></i></a>
+                        <a class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="detail data"><i class="fa fa-info"></i></a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
