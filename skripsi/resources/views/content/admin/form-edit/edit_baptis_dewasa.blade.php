@@ -1,10 +1,10 @@
-@extends('layouts.user')
+@extends('layouts.admin')
 
 @section('content')
     <br>
     <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
             <div class="h1 text-center">
                 <p>Form Registrasi Sakramen Baptis Dewasa</p>
             </div>
@@ -23,11 +23,11 @@
                 <div class="form-group">
                     <label for="exampleInputTtl1">Tempat Tanggal Lahir</label>
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-lg-6">
                             <input type="text" class="form-control" id="exampleInputTtl1" placeholder="Masukan Tempat Lahir"
                                 name="tempat_lahir">
                         </div>
-                        <div class="col-6">
+                        <div class="col-lg-6">
                             <input type="date" class="form-control" id="exampleInputTtl1"
                                 placeholder="Masukan Tanggal Lahir" name="tanggal_lahir">
                         </div>
@@ -50,8 +50,8 @@
                 </div>
                 <fieldset class="form-group">
                     <div class="row">
-                        <legend class="col-form-label col-sm-2 pt-0">Status Perkawinan Calon Baptis</legend>
-                        <div class="col-sm-10">
+                        <legend class="col-form-label col-lg-4 pt-0">Status Perkawinan Calon Baptis</legend>
+                        <div class="col-lg-8">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="status_perkawinan_calon_baptis"
                                     id="gridRadios1" value="belum menikah" checked>
