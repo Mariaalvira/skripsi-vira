@@ -13,40 +13,39 @@
                 <div class="form-group">
                     <label for="exampleInputNama1">Nama Diri</label>
                     <input type="text" class="form-control" id="exampleInputNama1" aria-describedby="namaHelp"
-                        placeholder="Masukan nama" name="nama_diri">
+                        placeholder="Masukan nama" name="nama_diri" value="{{ $datas->nama_diri }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputNamaBaptis1">Nama Baptis</label>
-                    <input type="text" class="form-control" id="exampleInputNamaBaptis1" placeholder="Masukan Nama Baptis"
-                        name="nama_baptis">
+                    <input type="text" class="form-control" id="exampleInputNamaBaptis1" placeholder="Masukan Nama Baptis" name="nama_baptis" value="{{ $datas->nama_baptis }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputTtl1">Tempat Tanggal Lahir</label>
                     <div class="row">
                         <div class="col-lg-6">
                             <input type="text" class="form-control" id="exampleInputTtl1" placeholder="Masukan Tempat Lahir"
-                                name="tempat_lahir">
+                                name="tempat_lahir" value="{{ $datas->tempat_lahir }}">
                         </div>
                         <div class="col-lg-6">
                             <input type="date" class="form-control" id="exampleInputTtl1"
-                                placeholder="Masukan Tanggal Lahir" name="tanggal_lahir">
+                                placeholder="Masukan Tanggal Lahir" name="tanggal_lahir" value="{{ $datas->tanggal_lahir }}">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputAlamat1">Alamat</label>
                     <input type="text" class="form-control" id="exampleInputAlamat1" placeholder="Masukan Alamat"
-                        name="alamat">
+                        name="alamat" value="{{ $datas->alamat}}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputNamaAyah1">Nama Ayah</label>
                     <input type="text" class="form-control" id="exampleInputNamaAyah1" placeholder="Masukan Nama Ayah"
-                        name="nama_ayah">
+                        name="nama_ayah" value="{{ $datas->nama_ayah }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputNamaIbu1">Nama Ibu</label>
                     <input type="text" class="form-control" id="exampleInputNamaIbu1" placeholder="Masukan Nama Ibu"
-                        name="nama_ibu">
+                        name="nama_ibu" value="{{ $datas->nama_ibu }}">
                 </div>
                 <fieldset class="form-group">
                     <div class="row">
@@ -88,7 +87,7 @@
                 <div class="form-group">
                     <label for="exampleInputPelajaran1">Mengikuti Pelajaran Agama Sejak</label>
                     <input type="text" class="form-control" id="exampleInputPelajaran1"
-                        placeholder="Masukan Sejak Kapan Mengikuti Pelajaran Agama" name="mengikuti_pelajaran_agama_sejak">
+                        placeholder="Masukan Sejak Kapan Mengikuti Pelajaran Agama" name="mengikuti_pelajaran_agama_sejak" value="{{ $datas->mengikuti_pelajaran_agama_sejak }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPerayaan1">Mengikuti Perayaan Ekaristi Sejak</label>
@@ -100,22 +99,22 @@
                     <label for="exampleInputKegiatan1">Mengikuti Kegiatan Lingkungan Sejak</label>
                     <input type="text" class="form-control" id="exampleInputKegiatan1"
                         placeholder="Masukan Sejak Kapan Mengikuti Kegiatan Lingkungan"
-                        name="mengikuti_kegiatan_lingkungan_sejak">
+                        name="mengikuti_kegiatan_lingkungan_sejak" value="{{ $datas->mengikuti_kegiatan_lingkungan_sejak }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputNamaGurus1">Nama Guru Agama yang mengajar</label>
                     <input type="text" class="form-control" id="exampleInputNamaGuru1"
-                        placeholder="Masukan Nama Guru yang Mengajar" name="nama_guru_agama_yang_mengajar">
+                        placeholder="Masukan Nama Guru yang Mengajar" name="nama_guru_agama_yang_mengajar" value="{{ $datas->nama_ }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputNamaWali1">Nama Wali Baptis</label>
                     <input type="text" class="form-control" id="exampleInputNamaWali1"
-                        placeholder="Masukan Nama Wali Baptis" name="nama_wali_baptis">
+                        placeholder="Masukan Nama Wali Baptis" name="nama_wali_baptis" value="{{ $datas->nama_wali_baptis }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPemberkatan1">Pemberkatan dan Pembaptisan</label>
                     <input type="text" class="form-control" id="exampleInpuPemberkatan1"
-                        placeholder="Masukan Pemberkatan dan Pembaptisan" name="pemberkatan_dan_pembaptisan">
+                        placeholder="Masukan Pemberkatan dan Pembaptisan" name="pemberkatan_dan_pembaptisan" value="{{ $datas->pemberkatan_dan_pembaptisan }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputNamaPembaptis1">Fc Akte Kelahiran</label>

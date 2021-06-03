@@ -59,4 +59,35 @@ class SakramenKomuniController extends Controller
          return response()->json($sakramenKomuni);
     }
 
+    public function show_update($id)
+    {
+        $datas = SakramenKomuni::find($id);
+        return view(
+            'content.admin.form-edit.edit_sakramen_komuni',
+            compact(datas)
+        );
+    }
+
+    public function update_sakramen_komuni(Request $request, $id)
+    {
+        $sakramenKomuni = SakramenKomuni::find($id);
+        $sakramenKomuni->nama_diri = $request->nama_diri;
+        $sakramenKomuni->nama_baptis = $request->nama_baptis;
+        $sakramenKomuni->tempat_lahir = $request->tempat_lahir;
+        $sakramenKomuni->tanggal_lahir = $request->tanggal_lahir;
+        $sakramenKomuni->tempat_baptis = $request->tempat_baptis;
+        $sakramenKomuni->tanggal_baptis = $request->tanggal_baptis;
+        $sakramenKomuni->buku_baptis = $request->buku_baptis;
+        $sakramenKomuni->nama_sekolah = $request->nama_sekolah;
+        $sakramenKomuni->kelas = $request->kelas;
+        $sakramenKomuni->lingkungan_paroki = $request->lingkungan_paroki;
+        $sakramenKomuni->nama_ayah = $request->nama_ayah;
+        $sakramenKomuni->nama_ibu = $request->nama_ibu;
+        $sakramenKomuni->alamat_orangtua = $request->alamat_orangtua;
+        $sakramenKomuni->no_telepon = $request->no_telepon;
+        $sakramenKomuni->save();
+
+        return redirect('/admin/sakramen-komuni')->with('successMsg', 'Data Berhasil di Ubah');
+    }
+
 }

@@ -88,6 +88,36 @@ class SakramenBaptisDewasaController extends Controller
 
     public function show_update()
     {
-        return view('content.admin.form-edit.edit_baptis_dewasa');
+
+        $datas = BaptisDewasa::find($id);
+        return view(
+            'content.admin.form-edit.edit_baptis_dewasa',
+            compact(datas)
+        );
+    }
+
+    public function update_baptis_dewasa(Request $request, $id)
+    {
+        $hari_lahir = $request->tanggal_lahir;
+        $umur = Carbon::parse($hari_lahir)->age;
+
+        $baptisDewasa = BaptisDewasa::find($id);
+        $baptisDewasa->nama_diri = $request->nama_diri;
+        $baptisDewasa->nama_baptis = $request->nama_baptis;
+        $baptisDewasa->tempat_lahir = $request->tempat_lahir;
+        $baptisDewasa->tanggal_lahir = $request->tanggal_lahir;
+        $baptisDewasa->alamat = $request->alamat;
+        $baptisDewasa->nama_ayah = $request->nama_ayah;
+        $baptisDewasa->nama_ibu = $request->nama_ibu;
+        $baptisDewasa->status_perkawinan_calon_baptis = $request->status_perkawinan_calon_baptis;
+        $baptisDewasa->mengikuti_pelajaran_agama_sejak = $request->mengikuti_pelajaran_agama_sejak;
+        $baptisDewasa->mengikuti_perayaan_ekaristi_sejak = $request->mengikuti_perayaan_ekaristi_sejak;
+        $baptisDewasa->mengikuti_kegiatan_lingkungan_sejak = $request->mengikuti_kegiatan_lingkungan_sejak;
+        $baptisDewasa->nama_guru_agama_yang_mengajar = $request->nama_guru_agama_yang_mengajar;
+        $baptisDewasa->nama_wali_baptis = $request->nama_wali_baptis;
+        $baptisDewasa->pemberkatan_dan_pembaptisan = $request->pemberkatan_dan_pembaptisan;
+        $baptisDewasa->save();
+
+        return redirect('/admin/baptis-dewasa')->with('successMsg', 'Data Berhasil di Ubah');
     }
 }

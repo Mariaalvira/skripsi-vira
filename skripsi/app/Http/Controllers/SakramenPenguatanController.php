@@ -49,8 +49,7 @@ class SakramenPenguatanController extends Controller
         $sakramenPenguatan->alamat_calon = $request->alamat_calon;
         $sakramenPenguatan->no_telepon = $request->no_telepon;
         $sakramenPenguatan->paroki_asal = $request->paroki_asal;
-        $sakramenPenguatan->nama_pelindung_penguatan =
-            $request->nama_pelindung_penguatan;
+        $sakramenPenguatan->nama_pelindung_penguatan = $request->nama_pelindung_penguatan;
         $sakramenPenguatan->nama_wali_penguatan = $request->nama_wali_penguatan;
         $sakramenPenguatan->fc_surat_baptis = $save_fc_surat_baptis;
         $sakramenPenguatan->tanggal_pelaksanaan = $tanggal_pelaksanaan;
@@ -58,5 +57,36 @@ class SakramenPenguatanController extends Controller
         $sakramenPenguatan->save();
 
         return $sakramenPenguatan;
+    }
+
+    public function show_update($id)
+    {
+        $datas = SakramenPenguatan::find($id);
+        return view(
+            'content.admin.form-edit.edit_sakramen_penguatan',
+            compact(datas)
+        );
+    }
+
+    public function update_sakramen_penguatan(Request $request, $id)
+    {
+        $sakramenPenguatan = SakramenPenguatan::find($id);
+        $sakramenPenguatan->nama_diri = $request->nama_diri;
+        $sakramenPenguatan->nama_baptis = $request->nama_baptis;
+        $sakramenPenguatan->tempat_lahir = $request->tempat_lahir;
+        $sakramenPenguatan->tanggal_lahir = $request->tanggal_lahir;
+        $sakramenPenguatan->tempat_baptis = $request->tempat_baptis;
+        $sakramenPenguatan->tanggal_baptis = $request->tanggal_baptis;
+        $sakramenPenguatan->nomor_buku_baptis = $request->nomor_buku_baptis;
+        $sakramenPenguatan->nama_ayah = $request->nama_ayah;
+        $sakramenPenguatan->nama_ibu = $request->nama_ibu;
+        $sakramenPenguatan->alamat_calon = $request->alamat_calon;
+        $sakramenPenguatan->no_telepon = $request->no_telepon;
+        $sakramenPenguatan->paroki_asal = $request->paroki_asal;
+        $sakramenPenguatan->nama_pelindung_penguatan = $request->nama_pelindung_penguatan;
+        $sakramenPenguatan->nama_wali_penguatan = $request->nama_wali_penguatan;
+        $sakramenPenguatan->save();
+
+        return redirect('/admin/sakramen-penguatan')->with('successMsg', 'Data Berhasil di Ubah');
     }
 }
