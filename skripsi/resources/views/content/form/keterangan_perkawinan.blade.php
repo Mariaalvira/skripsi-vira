@@ -167,6 +167,11 @@
                             <input type="time" class="form-control" id="exampleInputWaktu1"
                                 placeholder="Masukan Waktu Pelaksanaan" name="pukul">
                         </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1"
+                        placeholder="Masukan Email Anda" name="email">
+                </div>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>

@@ -99,6 +99,12 @@
                         name="tanggal_pelaksanaan" value="{{ $datas->tanggal_pelaksanaan }}">
                 </div>
                 <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1"
+                        placeholder="Masukan Email Anda" name="email"
+                        value="{{ $datas->email }}">
+                </div>
+                <div class="form-group">
                     <strong>
                         <p>Lampiran Berkas Umat :</p>
                     </strong>

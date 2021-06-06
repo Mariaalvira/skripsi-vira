@@ -84,6 +84,11 @@
                         name="no_telepon">
                 </div>
                 <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1"
+                        placeholder="Masukan Email Anda" name="email">
+                </div>
+                <div class="form-group">
                     <label for="exampleInputNamaPembaptis1">Fc Surat Baptis</label>
                     <input type="file" class="form-control" id="exampleInputPembaptis1"
                         placeholder="Masukan Fc Surat Baptis" name="fc_surat_baptis">

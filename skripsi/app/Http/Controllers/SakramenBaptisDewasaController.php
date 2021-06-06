@@ -75,6 +75,7 @@ class SakramenBaptisDewasaController extends Controller
         $baptisDewasa->nama_wali_baptis = $request->nama_wali_baptis;
         $baptisDewasa->pemberkatan_dan_pembaptisan =
             $request->pemberkatan_dan_pembaptisan;
+        $baptisDewasa->email = $request->email;
         $baptisDewasa->fc_akte_kelahiran = $save_fc_surat_akte_kelahiran;
         $baptisDewasa->fc_surat_ganti_nama = $save_fc_surat_ganti_nama;
         $baptisDewasa->fc_surat_nikah_calon_baptis = $save_fc_surat_nikah_gereja;

@@ -51,6 +51,7 @@ class SakramenKomuniController extends Controller
         $sakramenKomuni->nama_ibu = $request->nama_ibu;
         $sakramenKomuni->alamat_orangtua = $request->alamat_orangtua;
         $sakramenKomuni->no_telepon = $request->no_telepon;
+        $baptisDewasa->email = $request->email;
         $sakramenKomuni->fc_surat_baptis = $save_fc_surat_baptis;
         $sakramenKomuni->tanggal_pelaksanaan = $tanggal_pelaksanaan;
         $sakramenKomuni->status_pembayaran = 'belum';
@@ -85,6 +86,7 @@ class SakramenKomuniController extends Controller
         $sakramenKomuni->nama_ibu = $request->nama_ibu;
         $sakramenKomuni->alamat_orangtua = $request->alamat_orangtua;
         $sakramenKomuni->no_telepon = $request->no_telepon;
+        $baptisDewasa->email = $request->email;
         $sakramenKomuni->save();
 
         return redirect('/admin/sakramen-komuni')->with('successMsg', 'Data Berhasil di Ubah');

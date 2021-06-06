@@ -51,6 +51,7 @@ class SakramenPenguatanController extends Controller
         $sakramenPenguatan->paroki_asal = $request->paroki_asal;
         $sakramenPenguatan->nama_pelindung_penguatan = $request->nama_pelindung_penguatan;
         $sakramenPenguatan->nama_wali_penguatan = $request->nama_wali_penguatan;
+        $baptisDewasa->email = $request->email;
         $sakramenPenguatan->fc_surat_baptis = $save_fc_surat_baptis;
         $sakramenPenguatan->tanggal_pelaksanaan = $tanggal_pelaksanaan;
         $sakramenPenguatan->status_pembayaran = 'belum';
@@ -85,6 +86,7 @@ class SakramenPenguatanController extends Controller
         $sakramenPenguatan->paroki_asal = $request->paroki_asal;
         $sakramenPenguatan->nama_pelindung_penguatan = $request->nama_pelindung_penguatan;
         $sakramenPenguatan->nama_wali_penguatan = $request->nama_wali_penguatan;
+        $baptisDewasa->email = $request->email;
         $sakramenPenguatan->save();
 
         return redirect('/admin/sakramen-penguatan')->with('successMsg', 'Data Berhasil di Ubah');

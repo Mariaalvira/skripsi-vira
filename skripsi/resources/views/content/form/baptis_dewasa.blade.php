@@ -118,6 +118,11 @@
                         placeholder="Masukan Pemberkatan dan Pembaptisan" name="pemberkatan_dan_pembaptisan">
                 </div>
                 <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1"
+                        placeholder="Masukan Email Anda" name="email">
+                </div>
+                <div class="form-group">
                     <label for="exampleInputNamaPembaptis1">Fc Akte Kelahiran</label>
                     <input type="file" class="form-control" id="exampleInputPembaptis1"
                         placeholder="Masukan Fc Akte Kelahiran" name="fc_akte_kelahiran">

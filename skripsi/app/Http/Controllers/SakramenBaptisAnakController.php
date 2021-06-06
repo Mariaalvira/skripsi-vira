@@ -69,6 +69,7 @@ class SakramenBaptisAnakController extends Controller
             'nama_wali_baptis' => $request->nama_wali_baptis,
             'tempat_baptis' => $request->tempat_baptis,
             'dibaptis_oleh' => $request->dibaptis_oleh,
+            'email' => $request->email;
             'fc_surat_pernikahan_gereja_orangtua' => $save_fc_surat_nikah_gereja,
             'fc_surat_nikah_sipil_orangtua' => $save_fc_surat_nikah_sipil,
             'fc_akte_kelahiran' => $save_fc_surat_akte_kelahiran,
@@ -107,6 +108,7 @@ class SakramenBaptisAnakController extends Controller
         $baptisAnak->nama_wali_baptis = $request->nama_wali_baptis;
         $baptisAnak->tempat_baptis = $request->tempat_baptis;
         $baptisAnak->dibaptis_oleh = $request->dibaptis_oleh;
+        $baptisDewasa->email = $request->email;
         $baptisAnak->save();
 
         return redirect('/admin/baptis-anak')->with('successMsg', 'Data Berhasil di Ubah');

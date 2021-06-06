@@ -49,6 +49,7 @@ class SakramenPerkawinanController extends Controller
         $sakramenPerkawinan->gereja_pemberkatan_nikah = $request->gereja_pemberkatan_nikah;
         $sakramenPerkawinan->tanggal = $request->tanggal;
         $sakramenPerkawinan->pukul = $request->pukul;
+        $baptisDewasa->email = $request->email;
         $sakramenPerkawinan->status_pembayaran = 'belum';
         $sakramenPerkawinan->save();
 
@@ -92,6 +93,7 @@ class SakramenPerkawinanController extends Controller
         $sakramenPerkawinan->gereja_pemberkatan_nikah = $request->gereja_pemberkatan_nikah;
         $sakramenPerkawinan->tanggal = $request->tanggal;
         $sakramenPerkawinan->pukul = $request->pukul;
+        $baptisDewasa->email = $request->email;
         $sakramenPerkawinan->save();
 
         return redirect('/admin/sakramen-perkawinan')->with('successMsg', 'Data Berhasil di Ubah');

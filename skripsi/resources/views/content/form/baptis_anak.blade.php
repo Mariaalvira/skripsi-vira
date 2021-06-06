@@ -101,6 +101,11 @@
                         placeholder="Masukan Nama Yang Membaptis" name="dibaptis_oleh">
                 </div>
                 <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1"
+                        placeholder="Masukan Email Anda" name="email">
+                </div>
+                <div class="form-group">
                     <label for="exampleInputNamaPembaptis1">Fc Surat Pernikaha Gereja Orang Tua</label>
                     <input type="file" class="form-control" id="exampleInputPembaptis1"
                         placeholder="Masukan Fc surat pernikahan orang tua" name="fc_surat_nikah_gereja_orangtua">
