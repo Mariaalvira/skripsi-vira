@@ -8,6 +8,15 @@
             <div class="h1 text-center">
                 <p>Form Registrasi Sakramen Perkawinan</p>
             </div>
+            <div class="row">
+                <div class="col-md-12 mt-3">
+                  @if(session('successMsg'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('successMsg') }}
+                    </div>
+                  @endif
+              </div>
+            </div>
             <form action="/perkawinan/create" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <fieldset>
@@ -167,12 +176,12 @@
                             <input type="time" class="form-control" id="exampleInputWaktu1"
                                 placeholder="Masukan Waktu Pelaksanaan" name="pukul">
                         </div>
-                <div class="form-group">
+                    </div>
+                </div>
+                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
                     <input type="text" class="form-control" id="exampleInputEmail1"
                         placeholder="Masukan Email Anda" name="email">
-                </div>
-                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

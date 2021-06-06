@@ -8,6 +8,20 @@
             <div class="h1 text-center">
                 <p>Form Registrasi Sakramen Baptis Dewasa</p>
             </div>
+            <div class="row">
+                <div class="col-md-12 mt-3">
+                  @if(session('successMsg'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('successMsg') }}
+                    </div>
+                  @endif
+                    @if(session('errorMsg'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('errorMsg') }}
+                    </div>
+                  @endif
+                </div>
+            </div>
             <form action="/baptis-dewasa/create" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">

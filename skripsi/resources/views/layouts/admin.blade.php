@@ -121,7 +121,7 @@
                         <ul class="menu-content">
                             <li><a href="{{ url('admin/baptis-anak') }}">Baptis Anak</a></li>
                             <li><a href="{{ url('admin/baptis-dewasa') }}">Baptis Dewasa</a></li>
-                            <li><a href="{{ url('admin/panguatan') }}">Penguatan</a></li>
+                            <li><a href="{{ url('admin/penguatan') }}">Penguatan</a></li>
                             <li><a href="{{ url('admin/perkawinan') }}">Perkawinan</a></li>
                             <li><a href="{{ url('admin/komuni-pertama') }}">Komuni</a></li>
                         </ul>

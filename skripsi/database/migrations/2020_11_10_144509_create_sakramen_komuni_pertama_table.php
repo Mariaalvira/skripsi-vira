@@ -30,7 +30,8 @@ class CreateSakramenKomuniPertamaTable extends Migration
             $table->string('alamat_orangtua');
             $table->char('no_telepon', '12');
             $table->string('fc_surat_baptis');
-            $table->date('tanggal_pelaksanaan');
+            $table->date('batas_konfirmasi');
+            $table->string('email');
             $table->string('status_pembayaran');
             $table->timestamps();
         });

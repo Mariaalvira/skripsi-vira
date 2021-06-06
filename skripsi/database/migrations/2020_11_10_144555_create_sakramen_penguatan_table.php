@@ -30,7 +30,8 @@ class CreateSakramenPenguatanTable extends Migration
             $table->string('nama_pelindung_penguatan');
             $table->string('nama_wali_penguatan');
             $table->string('fc_surat_baptis');
-            $table->date('tanggal_pelaksanaan');
+            $table->date('batas_konfirmasi');
+            $table->string('email');
             $table->string('status_pembayaran');
             $table->timestamps();
         });

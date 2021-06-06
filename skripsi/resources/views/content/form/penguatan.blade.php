@@ -8,6 +8,15 @@
             <div class="h1 text-center">
                 <p>Form Registrasi Sakramen Penguatan</p>
             </div>
+            <div class="row">
+                <div class="col-md-12 mt-3">
+                  @if(session('successMsg'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('successMsg') }}
+                    </div>
+                  @endif
+                </div>
+            </div>
             <form action="/penguatan/create" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">

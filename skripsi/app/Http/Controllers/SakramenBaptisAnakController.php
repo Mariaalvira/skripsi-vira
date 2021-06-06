@@ -55,6 +55,10 @@ class SakramenBaptisAnakController extends Controller
         );
         $fc_surat_nikah_wali->move($tujuan_upload, $save_fc_surat_nikah_wali);
 
+        if ($umur > 15) {
+            return redirect('/baptis-anak')->with('errorMsg', 'Umur Melebihi Batas');
+        }
+
         DB::table('sakramen_baptis_anak')->insert([
             'nama_diri' => $request->nama_diri,
             'nama_baptis' => $request->nama_baptis,
@@ -69,16 +73,16 @@ class SakramenBaptisAnakController extends Controller
             'nama_wali_baptis' => $request->nama_wali_baptis,
             'tempat_baptis' => $request->tempat_baptis,
             'dibaptis_oleh' => $request->dibaptis_oleh,
-            'email' => $request->email;
+            'email' => $request->email,
             'fc_surat_pernikahan_gereja_orangtua' => $save_fc_surat_nikah_gereja,
             'fc_surat_nikah_sipil_orangtua' => $save_fc_surat_nikah_sipil,
             'fc_akte_kelahiran' => $save_fc_surat_akte_kelahiran,
             'fc_surat_nikah_gereja_wali_baptis' => $save_fc_surat_nikah_wali,
-            'tanggal_pelaksanaan' => $tanggal_pelaksanaan,
+            'batas_konfirmasi' => $tanggal_pelaksanaan,
             'status_pembayaran' => 'belum',
         ]);
 
-        return response()->json('berhasil upload dan simpan');
+       return redirect('/baptis-anak')->with('successMsg', 'Data Berhasil di Tambah');
     }
 
     public function show_update($id)
@@ -108,7 +112,7 @@ class SakramenBaptisAnakController extends Controller
         $baptisAnak->nama_wali_baptis = $request->nama_wali_baptis;
         $baptisAnak->tempat_baptis = $request->tempat_baptis;
         $baptisAnak->dibaptis_oleh = $request->dibaptis_oleh;
-        $baptisDewasa->email = $request->email;
+        $baptisAnak->email = $request->email;
         $baptisAnak->save();
 
         return redirect('/admin/baptis-anak')->with('successMsg', 'Data Berhasil di Ubah');

@@ -51,21 +51,21 @@ class SakramenKomuniController extends Controller
         $sakramenKomuni->nama_ibu = $request->nama_ibu;
         $sakramenKomuni->alamat_orangtua = $request->alamat_orangtua;
         $sakramenKomuni->no_telepon = $request->no_telepon;
-        $baptisDewasa->email = $request->email;
+        $sakramenKomuni->email = $request->email;
         $sakramenKomuni->fc_surat_baptis = $save_fc_surat_baptis;
-        $sakramenKomuni->tanggal_pelaksanaan = $tanggal_pelaksanaan;
+        $sakramenKomuni->batas_konfirmasi = $tanggal_pelaksanaan;
         $sakramenKomuni->status_pembayaran = 'belum';
         $sakramenKomuni->save();
 
-         return response()->json($sakramenKomuni);
+        return redirect('/sakramen-komuni')->with('successMsg', 'Data Berhasil di Tambah');
     }
 
     public function show_update($id)
     {
         $datas = SakramenKomuni::find($id);
         return view(
-            'content.admin.form-edit.edit_sakramen_komuni',
-            compact(datas)
+            'content.admin.form-edit.edit_komuni',
+            compact('datas')
         );
     }
 
@@ -86,10 +86,10 @@ class SakramenKomuniController extends Controller
         $sakramenKomuni->nama_ibu = $request->nama_ibu;
         $sakramenKomuni->alamat_orangtua = $request->alamat_orangtua;
         $sakramenKomuni->no_telepon = $request->no_telepon;
-        $baptisDewasa->email = $request->email;
+        $sakramenKomuni->email = $request->email;
         $sakramenKomuni->save();
 
-        return redirect('/admin/sakramen-komuni')->with('successMsg', 'Data Berhasil di Ubah');
+        return redirect('/admin/komuni-pertama')->with('successMsg', 'Data Berhasil di Ubah');
     }
 
 }

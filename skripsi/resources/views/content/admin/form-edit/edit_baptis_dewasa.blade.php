@@ -8,7 +8,7 @@
             <div class="h1 text-center">
                 <p>Form Registrasi Sakramen Baptis Dewasa</p>
             </div>
-            <form action="/baptis-dewasa/create" method="post" enctype="multipart/form-data">
+            <form action="/admin/update/baptis-dewasa/{{ $datas->id }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="exampleInputNama1">Nama Diri</label>
@@ -53,28 +53,28 @@
                         <div class="col-lg-8">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="status_perkawinan_calon_baptis"
-                                    id="gridRadios1" value="belum menikah" checked>
+                                    id="gridRadios1" value="belum menikah" {{ $datas->status_perkawinan_calon_baptis == 'belum menikah' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="gridRadios1">
                                     Belum menikah
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="status_perkawinan_calon_baptis"
-                                    id="gridRadios2" value="akan menikah">
+                                    id="gridRadios2" value="akan menikah" {{ $datas->status_perkawinan_calon_baptis == 'akan menikah' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="gridRadios2">
                                     Akan Menikah dengan (tempat dan tanggal)
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="status_perkawinan_calon_baptis"
-                                    id="gridRadios3" value="sudah menikah">
+                                    id="gridRadios3" value="sudah menikah" {{ $datas->status_perkawinan_calon_baptis == 'sudah menikah' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="gridRadios3">
                                     Sudah Menikah secara Gereja/KUA/Catatan Sipil/Cara Lain (dengan dan tempat & tanggal)
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="status_perkawinan_calon_baptis"
-                                    id="gridRadios3" value="sudah berpisah">
+                                    id="gridRadios3" value="sudah berpisah" {{ $datas->status_perkawinan_calon_baptis == 'sudah berpisah' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="gridRadios3">
                                     Perkawinan telah diputuskan/ dibatalkan karena : Kematian/ Perceraian Sipil/ Pemutusan/
                                     Pembatalan Gereja/ Cara Lain (Mohon disertakan fotocopy surat bukti) (tanggal dan
@@ -93,7 +93,7 @@
                     <label for="exampleInputPerayaan1">Mengikuti Perayaan Ekaristi Sejak</label>
                     <input type="text" class="form-control" id="exampleInputPerayaan1"
                         placeholder="Masukan Sejak Kapan Mengikuti Perayaan Ekaristi"
-                        name="mengikuti_perayaan_ekaristi_sejak">
+                        name="mengikuti_perayaan_ekaristi_sejak" value="{{ $datas->mengikuti_perayaan_ekaristi_sejak }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputKegiatan1">Mengikuti Kegiatan Lingkungan Sejak</label>
@@ -104,7 +104,7 @@
                 <div class="form-group">
                     <label for="exampleInputNamaGurus1">Nama Guru Agama yang mengajar</label>
                     <input type="text" class="form-control" id="exampleInputNamaGuru1"
-                        placeholder="Masukan Nama Guru yang Mengajar" name="nama_guru_agama_yang_mengajar" value="{{ $datas->nama_ }}">
+                        placeholder="Masukan Nama Guru yang Mengajar" name="nama_guru_agama_yang_mengajar" value="{{ $datas->nama_guru_agama_yang_mengajar }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputNamaWali1">Nama Wali Baptis</label>
@@ -122,25 +122,33 @@
                         placeholder="Masukan Email Anda" name="email"
                         value="{{ $datas->email }}">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputNamaPembaptis1">Fc Akte Kelahiran</label>
-                    <input type="file" class="form-control" id="exampleInputPembaptis1"
-                        placeholder="Masukan Fc Akte Kelahiran" name="fc_akte_kelahiran">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputNamaPembaptis1">Fc Surat Ganti Nama</label>
-                    <input type="file" class="form-control" id="exampleInputPembaptis1"
-                        placeholder="Masukan Fc Surat Ganti Nama" name="fc_surat_ganti_nama">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputNamaPembaptis1">Fc Surat Nikah Calon Baptis</label>
-                    <input type="file" class="form-control" id="exampleInputPembaptis1"
-                        placeholder="Masukan Fc Akte Surat Nikah" name="fc_surat_nikah">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputNamaPembaptis1">Fc Surat Nikah Wali Baptis</label>
-                    <input type="file" class="form-control" id="exampleInputPembaptis1"
-                        placeholder="Masukan Fc Surat Nikah Wali Baptis" name="fc_surat_nikah_wali_baptis">
+               
+                 <div class="form-group">
+                    <strong>
+                        <p>Lampiran Berkas Umat :</p>
+                    </strong>
+
+                    @if ($datas->fc_surat_nikah_calon_baptis)
+                        <p>FC Surat Pernikahan Gereja Orang Tua : <span class="glyphicon glyphicon-ok text-success"></span>
+                        </p>
+                    @endif
+
+                    @if ($datas->fc_surat_ganti_nama)
+                        <p>FC Surat Nikah Sipil Orang Tua : <span class="glyphicon glyphicon-ok text-success"></span>
+                        </p>
+                    @endif
+
+                    @if ($datas->fc_akte_kelahiran)
+                        <p>FC Akte Kelahiran atau Surat Ketrangan Lahir : <span
+                                class="glyphicon glyphicon-ok text-success"></span>
+                        </p>
+                    @endif
+
+                    @if ($datas->fc_surat_nikah_gereja_wali_baptis)
+                        <p>FC Akte Surat Nikah Gereja Katolik Wali Baptis : <span
+                                class="glyphicon glyphicon-ok text-success"></span>
+                        </p>
+                    @endif
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

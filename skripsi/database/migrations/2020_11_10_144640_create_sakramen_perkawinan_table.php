@@ -41,6 +41,8 @@ class CreateSakramenPerkawinanTable extends Migration
             $table->date('tanggal');
             $table->string('pukul');
             $table->string('status_pembayaran');
+            $table->date('batas_konfirmasi');
+            $table->string('email');
             $table->timestamps();
         });
     }

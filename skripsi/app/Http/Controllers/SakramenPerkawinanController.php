@@ -23,6 +23,7 @@ class SakramenPerkawinanController extends Controller
 
     public function store_perkawinan(Request $request)
     {
+        $batas_konfirmasi = Carbon::now()->addDay(3);
         $sakramenPerkawinan = new SakramenPerkawinan;
         $sakramenPerkawinan->nama_lengkap_suami = $request->nama_lengkap_suami;
         $sakramenPerkawinan->tempat_lahir_suami = $request->tempat_lahir_suami;
@@ -49,19 +50,20 @@ class SakramenPerkawinanController extends Controller
         $sakramenPerkawinan->gereja_pemberkatan_nikah = $request->gereja_pemberkatan_nikah;
         $sakramenPerkawinan->tanggal = $request->tanggal;
         $sakramenPerkawinan->pukul = $request->pukul;
-        $baptisDewasa->email = $request->email;
+        $sakramenPerkawinan->email = $request->email;
+        $sakramenPerkawinan->batas_konfirmasi = $batas_konfirmasi;
         $sakramenPerkawinan->status_pembayaran = 'belum';
         $sakramenPerkawinan->save();
 
-        return redirect('/perkawinan');
+        return redirect('/perkawinan')->with('successMsg', 'Data Berhasil di Tambah');
     }
 
     public function show_update($id)
     {
         $datas = SakramenPerkawinan::find($id);
         return view(
-            'content.admin.form-edit.edit_sakramen_perkawinan',
-            compact(datas)
+            'content.admin.form-edit.edit_perkawinan',
+            compact('datas')
         );
     }
 
@@ -93,9 +95,9 @@ class SakramenPerkawinanController extends Controller
         $sakramenPerkawinan->gereja_pemberkatan_nikah = $request->gereja_pemberkatan_nikah;
         $sakramenPerkawinan->tanggal = $request->tanggal;
         $sakramenPerkawinan->pukul = $request->pukul;
-        $baptisDewasa->email = $request->email;
+        $sakramenPerkawinan->email = $request->email;
         $sakramenPerkawinan->save();
 
-        return redirect('/admin/sakramen-perkawinan')->with('successMsg', 'Data Berhasil di Ubah');
+        return redirect('/admin/perkawinan')->with('successMsg', 'Data Berhasil di Ubah');
     }
 }

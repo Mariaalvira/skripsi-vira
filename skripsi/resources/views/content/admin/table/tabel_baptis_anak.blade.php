@@ -33,7 +33,7 @@
                             <td>{{ $data->nama_baptis }}</td>
                             <td>{{ $data->nama_wali_baptis }}</td>
                             <td>{{ $data->dibaptis_oleh }}</td>
-                            <td>maria123@gmail.com</td>
+                            <td>{{ $data->email }}</td>
                             <td>
                                 <a href="{{ url('admin/form-edit/baptis-anak/' . $data->id) }}"
                                     class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top"

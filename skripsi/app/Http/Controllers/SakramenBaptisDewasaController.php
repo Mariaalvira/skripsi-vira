@@ -54,6 +54,10 @@ class SakramenBaptisDewasaController extends Controller
         );
         $fc_surat_nikah_wali->move($tujuan_upload, $save_fc_surat_nikah_wali);
 
+        if ($umur < 16) {
+            return redirect('/baptis-dewasa')->with('errorMsg', 'Umur Kurang Dari Batas');
+        }
+
         $baptisDewasa = new BaptisDewasa();
         $baptisDewasa->nama_diri = $request->nama_diri;
         $baptisDewasa->nama_baptis = $request->nama_baptis;
@@ -80,20 +84,20 @@ class SakramenBaptisDewasaController extends Controller
         $baptisDewasa->fc_surat_ganti_nama = $save_fc_surat_ganti_nama;
         $baptisDewasa->fc_surat_nikah_calon_baptis = $save_fc_surat_nikah_gereja;
         $baptisDewasa->fc_surat_nikah_gereja_wali_baptis = $save_fc_surat_nikah_wali;
-        $baptisDewasa->tanggal_pelaksanaan = $tanggal_pelaksanaan;
+        $baptisDewasa->batas_konfirmasi = $tanggal_pelaksanaan;
         $baptisDewasa->status_pembayaran = 'belum';
         $baptisDewasa->save();
 
-        return response()->json($baptisDewasa);
+        return redirect('/baptis-dewasa')->with('successMsg', 'Data Berhasil di Simpan');
     }
 
-    public function show_update()
+    public function show_update($id)
     {
 
         $datas = BaptisDewasa::find($id);
         return view(
             'content.admin.form-edit.edit_baptis_dewasa',
-            compact(datas)
+            compact('datas')
         );
     }
 

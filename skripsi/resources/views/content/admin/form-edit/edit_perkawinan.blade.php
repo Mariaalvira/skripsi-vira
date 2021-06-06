@@ -53,17 +53,17 @@
                 <div class="form-group">
                     <label for="exampleInputNamaAyahSuami1">Nama Ayah</label>
                     <input type="text" class="form-control" id="exampleInputNamaAyahSuami1" placeholder="Masukan Nama Ayah"
-                        name="nama_ayah" value="{{ $datas->nama_ayah }}">
+                        name="nama_ayah_suami" value="{{ $datas->nama_ayah_suami }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputNamaIbuSuami1">Nama Ibu</label>
                     <input type="text" class="form-control" id="exampleInputNamaIbuSuami1" placeholder="Masukan Nama Ibu"
-                        name="nama_ibu" value="{{ $datas->nama_ibu }}">
+                        name="nama_ibu_suami" value="{{ $datas->nama_ibu_suami }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputLingkunganParokiSuami1">Lingkungan Paroki Suami</label>
                     <input type="text" class="form-control" id="exampleInputLingkunganParokiSuami1" placeholder="Masukan Lingkungan Paroki Suami"
-                        name="lingkungan_paroki_suami" value="{{ $datas->lingkungan_paroki_suami }}">
+                        name="lingkungan_suami" value="{{ $datas->lingkungan_suami }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputAlamatSuami1">Alamat Suami</label>
@@ -74,8 +74,8 @@
                 <div class="form-group">
                     <label for="exampleInputNoTeleponSuami1">Nomor Telepon</label>
                     <input type="text" class="form-control" id="exampleInputNomorTeleponSuami1"
-                        placeholder="Masukan Nomor Telepon Suami" name="nomor_telepon"
-                        value="{{ $datas->nomor_telepon }}">
+                        placeholder="Masukan Nomor Telepon Suami" name="no_telepon_suami"
+                        value="{{ $datas->no_telepon_suami }}">
                 </div>
                 <div class="form-group">
                     <input type="hidden" name="umur" value="anak">
@@ -120,17 +120,17 @@
                 <div class="form-group">
                     <label for="exampleInputNamaAyahIstri1">Nama Ayah</label>
                     <input type="text" class="form-control" id="exampleInputNamaAyahIstri1" placeholder="Masukan Nama Ayah"
-                        name="nama_ayah" value="{{ $datas->nama_ayah }}">
+                        name="nama_ayah_istri" value="{{ $datas->nama_ayah_istri }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputNamaIbuIstri1">Nama Ibu</label>
                     <input type="text" class="form-control" id="exampleInputNamaIbuIstri1" placeholder="Masukan Nama Ibu"
-                        name="nama_ibu" value="{{ $datas->nama_ibu }}">
+                        name="nama_ibu_istri" value="{{ $datas->nama_ibu_istri }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputLingkunganParokiIstri1">Lingkungan Paroki Isteri</label>
                     <input type="text" class="form-control" id="exampleInputLingkunganParokiIstri1" placeholder="Masukan Lingkungan Paroki Isteri"
-                        name="lingkungan_paroki_istri" value="{{ $datas->lingkungan_paroki_istri }}">
+                        name="lingkungan_istri" value="{{ $datas->lingkungan_istri }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputAlamatIstri1">Alamat Isteri</label>
@@ -141,23 +141,27 @@
                 <div class="form-group">
                     <label for="exampleInputNoTeleponIstri1">Nomor Telepon</label>
                     <input type="text" class="form-control" id="exampleInputNomorTeleponIstri1"
-                        placeholder="Masukan Nomor Telepon Isteri" name="nomor_telepon"
-                        value="{{ $datas->nomor_telepon }}">
+                        placeholder="Masukan Nomor Telepon Isteri" name="no_telepon_istri"
+                        value="{{ $datas->no_telepon_istri }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputGereja1">Gereja Pemberkatan Nikah</label>
                     <input type="text" class="form-control" id="exampleInputGereja1" placeholder="Masukan Gereja Pemberkatan Nikah"
                         name="gereja_pemberkatan_nikah" value="{{ $datas->gereja_pemberkatan_nikah }}">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputTanggalPelaksanaan1">Tanggal Pelaksanaan</label>
-                    <input type="text" class="form-control" id="exampleInputTanggalPelaksanaan1" placeholder="Masukan Tanggal Pelaksanaan"
-                        name="tanggal_pelaksanaan" value="{{ $datas->tanggal_pelaksanaan }}">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputWaktu1">Pukul</label>
-                    <input type="text" class="form-control" id="exampleInputWaktu1" placeholder="Masukan Waktu Pelaksanaan"
-                        name="waktu_pelaksanaan" value="{{ $datas->waktu_pelaksanaan }}">
+                 <div class="form-group">
+                    <label for="exampleInputTtbSuami1">Tanggal & Waktu Pelaksanaan</label>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input type="date" class="form-control" id="exampleInputTtbSuami1" placeholder="Masukan Tempat Baptis Suami"
+                                name="tanggal" value="{{ $datas->tanggal }}">
+                        </div>
+                        <div class="col-lg-6">
+                            <input type="time" class="form-control" id="exampleInputTtbSuami1"
+                                placeholder="Masukan Tanggal Baptis Suami" name="pukul"
+                                value="{{ $datas->pukul }}">
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>

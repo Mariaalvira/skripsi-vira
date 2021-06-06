@@ -5,6 +5,15 @@
         <div class="col-md-11">
             <table class="demo-table responsive">
                 <caption class="title">Tabel Sakramen Penguatan</caption>
+                <div class="row">
+                    <div class="col-md-12 mt-3">
+                      @if(session('successMsg'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('successMsg') }}
+                        </div>
+                      @endif
+                    </div>
+                </div>
                 <thead class="text-center">
                     <tr>
                         <th scope="col" class="text-center">No</th>
@@ -24,9 +33,9 @@
                             <td>{{ $data->nama_baptis }}</td>
                             <td>{{ $data->nama_wali_penguatan }}</td>
                             <td>{{ $data->paroki_asal }}</td>
-                            <td>maria123@gmail.com</td>
+                            <td>{{ $data->email }}</td>
                             <td>
-                                <a class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top"
+                                <a href="{{ url('admin/form-edit/penguatan/' . $data->id) }}" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top"
                                     title="edit data"><i class="fa fa-edit"></i></a>
                                 <a class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top"
                                     title="send email"><i class="fa fa-envelope"></i></a>

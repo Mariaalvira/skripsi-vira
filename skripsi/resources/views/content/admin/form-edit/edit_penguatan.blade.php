@@ -75,8 +75,8 @@
                 <div class="form-group">
                     <label for="exampleInputNoTelepon1">Nomor Telepon</label>
                     <input type="text" class="form-control" id="exampleInputNomorTelepon1"
-                        placeholder="Masukan Nomor Telepon" name="nomor_telepon"
-                        value="{{ $datas->nomor_telepon }}">
+                        placeholder="Masukan Nomor Telepon" name="no_telepon"
+                        value="{{ $datas->no_telepon }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputParokiAsal1">Paroki Asal</label>
@@ -92,11 +92,6 @@
                     <label for="exampleInputNamaWaliPenguatan1">Nama Wali Penguatan</label>
                     <input type="text" class="form-control" id="exampleInputNamaWaliPenguatan1" placeholder="Masukan Nama Wali Penguatan"
                         name="nama_wali_penguatan" value="{{ $datas->nama_wali_penguatan }}">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputTanggalPelaksanaan1">Tanggal Pelaksanaan</label>
-                    <input type="text" class="form-control" id="exampleInputTanggalPelaksanaan1" placeholder="Masukan Tanggal Pelaksanaan"
-                        name="tanggal_pelaksanaan" value="{{ $datas->tanggal_pelaksanaan }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>

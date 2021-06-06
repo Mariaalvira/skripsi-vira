@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
-            <form action="/admin/update/komuni/{{ $datas->id }}" method="post" enctype="multipart/form-data">
+            <form action="/admin/update/komuni-pertama/{{ $datas->id }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <input type="hidden" name="umur" value="anak">
@@ -89,13 +89,8 @@
                 <div class="form-group">
                     <label for="exampleInputNoTelepon1">Nomor Telepon</label>
                     <input type="text" class="form-control" id="exampleInputNomorTelepon1"
-                        placeholder="Masukan Nomor Telepon" name="nomor_telepon"
-                        value="{{ $datas->nomor_telepon }}">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputTanggalPelaksanaan1">Tanggal Pelaksanaan</label>
-                    <input type="text" class="form-control" id="exampleInputTanggalPelaksanaan1" placeholder="Masukan Tanggal Pelaksanaan"
-                        name="tanggal_pelaksanaan" value="{{ $datas->tanggal_pelaksanaan }}">
+                        placeholder="Masukan Nomor Telepon" name="no_telepon"
+                        value="{{ $datas->no_telepon }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>

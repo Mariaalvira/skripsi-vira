@@ -51,21 +51,20 @@ class SakramenPenguatanController extends Controller
         $sakramenPenguatan->paroki_asal = $request->paroki_asal;
         $sakramenPenguatan->nama_pelindung_penguatan = $request->nama_pelindung_penguatan;
         $sakramenPenguatan->nama_wali_penguatan = $request->nama_wali_penguatan;
-        $baptisDewasa->email = $request->email;
+        $sakramenPenguatan->email = $request->email;
         $sakramenPenguatan->fc_surat_baptis = $save_fc_surat_baptis;
-        $sakramenPenguatan->tanggal_pelaksanaan = $tanggal_pelaksanaan;
+        $sakramenPenguatan->batas_konfirmasi = $tanggal_pelaksanaan;
         $sakramenPenguatan->status_pembayaran = 'belum';
         $sakramenPenguatan->save();
 
-        return $sakramenPenguatan;
-    }
+        return redirect('/penguatan')->with('successMsg', 'Data Berhasil di Tambah');    }
 
     public function show_update($id)
     {
         $datas = SakramenPenguatan::find($id);
         return view(
-            'content.admin.form-edit.edit_sakramen_penguatan',
-            compact(datas)
+            'content.admin.form-edit.edit_penguatan',
+            compact('datas')
         );
     }
 
@@ -86,9 +85,9 @@ class SakramenPenguatanController extends Controller
         $sakramenPenguatan->paroki_asal = $request->paroki_asal;
         $sakramenPenguatan->nama_pelindung_penguatan = $request->nama_pelindung_penguatan;
         $sakramenPenguatan->nama_wali_penguatan = $request->nama_wali_penguatan;
-        $baptisDewasa->email = $request->email;
+        $sakramenPenguatan->email = $request->email;
         $sakramenPenguatan->save();
 
-        return redirect('/admin/sakramen-penguatan')->with('successMsg', 'Data Berhasil di Ubah');
+        return redirect('/admin/penguatan')->with('successMsg', 'Data Berhasil di Ubah');
     }
 }
