@@ -33,6 +33,7 @@ class CreateSakramenBaptisAnakTable extends Migration
             $table->string('fc_surat_nikah_gereja_wali_baptis');
             $table->string('status_pembayaran');
             $table->date('tanggal_pelaksanaan');
+            $table->date('tanggal_pelaksanaan');
             $table->timestamps();
         });
     }
