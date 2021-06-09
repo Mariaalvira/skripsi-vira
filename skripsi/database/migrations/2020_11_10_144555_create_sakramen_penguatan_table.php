@@ -15,6 +15,7 @@ class CreateSakramenPenguatanTable extends Migration
     {
         Schema::create('sakramen_penguatan', function (Blueprint $table) {
             $table->id('id');
+            $table->foreignId('id_jadwal')->nullable()->references('id')->on('jadwals');
             $table->string('nama_diri');
             $table->string('nama_baptis');
             $table->string('tempat_lahir');

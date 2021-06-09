@@ -112,7 +112,7 @@
             <menu>
                 <ul class="menu-content">
                     <li><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
-                    <li><a href="#"><i class="fa fa-user"></i> Daftar Umat</a></li>
+                    <li><a href="{{ url('/admin/jadwal') }}"><i class="fa fa-user"></i> Jadwal</a></li>
                     <li><a href="#"><i class="fa fa-money"></i> Pembayaran</a></li>
                     <li><a href="#"><i class="fa fa-bell"></i> Notifikasi</a></li>
                     <li>

@@ -77,4 +77,12 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/penguatan','SakramenPenguatanController@show_penguatan');
     Route::get('/form-edit/penguatan/{id}','SakramenPenguatanController@show_update');
     Route::post('/update/penguatan/{id}','SakramenPenguatanController@update_sakramen_penguatan');
+
+
+    // jadwal
+    Route::get('/jadwal','JadwalController@index');
+    Route::get('/jadwal/form-create','JadwalController@show_jadwal');
+    Route::get('/jadwal/form-edit/{id}','JadwalController@show_update');
+    Route::post('/jadwal/create','JadwalController@store_jadwal');
+    Route::post('/jadwal/update/{id}','JadwalController@update_jadwal');
 });
