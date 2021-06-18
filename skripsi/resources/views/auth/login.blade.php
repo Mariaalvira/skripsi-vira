@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< Updated upstream
- check
-=======
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -84,5 +81,4 @@
             </div>
         </div>
     </div>
->>>>>>> Stashed changes
 @endsection
