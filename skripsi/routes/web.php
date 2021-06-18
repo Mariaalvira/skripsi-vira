@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('auth.login');
+})->middleware('guest');
+
+Route::group(['prefix' => 'auth'], function () {
+    Route::post('/login', 'AdminController@masuk');
+    Route::get('/logout', 'AdminController@keluar');
 });
 
 Route::group(['prefix' => 'baptis-anak'], function(){
@@ -43,7 +48,7 @@ Route::group(['prefix' => 'perkawinan'], function(){
 });
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function () {
     Route::get('', 'AdminController@index');
     // baptis anak
     Route::get('/baptis-anak', 'SakramenBaptisAnakController@show_baptis_anak');

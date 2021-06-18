@@ -105,7 +105,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">Admin Dashboard</a>
-                <a href="#" class="navbar-brand right">Logout</a>
+                <a href="{{ url('/auth/logout') }}" class="navbar-brand right">Logout</a>
             </div>
         </nav>
         <aside class="sidebar">

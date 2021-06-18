@@ -47,9 +47,15 @@ return [
             'hash' => false,
         ],
 
-        'akun' => [
+        'admin' => [
             'driver' => 'session',
-            'provider' => 'akuns'
+            'provider' => 'admin'
+        ],
+
+        'apiadmin' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+            'hash' => false,
         ],
     ],
 
@@ -76,9 +82,9 @@ return [
             'model' => App\User::class,
         ],
 
-        'akuns' =>[
+        'admin' =>[
             'driver' => 'eloquent',
-            'model' => App\Akun::class,
+            'model' => App\Admin::class,
         ],
 
         // 'users' => [
