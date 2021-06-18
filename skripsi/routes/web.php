@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('auth.login');
 });
 
 Route::group(['prefix' => 'baptis-anak'], function(){
@@ -41,11 +41,6 @@ Route::group(['prefix' => 'perkawinan'], function(){
     Route::get('', 'SakramenPerkawinanController@index');
 	Route::post('/create', 'SakramenPerkawinanController@store_perkawinan');
 });
-
-
-
-
-
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -86,3 +81,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/jadwal/create','JadwalController@store_jadwal');
     Route::post('/jadwal/update/{id}','JadwalController@update_jadwal');
 });
+
+
+Route::get('/kirimemail','EmailController@index');
