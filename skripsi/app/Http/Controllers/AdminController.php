@@ -26,7 +26,7 @@ class AdminController extends Controller
             Auth::guard('admin')->loginUsingId($admin[0]['id_admin']);
             return redirect(URL('/admin'));
         }else {
-            return redirect(URL('/'));
+            return redirect(URL('/login'));
         }
     }
 

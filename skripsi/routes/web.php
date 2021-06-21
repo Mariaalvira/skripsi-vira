@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('home');
+});
+
+Route::get('/login', function () {
     return view('auth.login');
 })->middleware('guest');
 
@@ -88,4 +92,4 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function () 
 });
 
 
-Route::get('/kirimemail','EmailController@index');
+Route::get('/kirim-email','EmailController@index');

@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\BaptisAnak;
 use Illuminate\Support\Facades\Storage;
+use App\Mail\EmailBaptisAnak;
+use Illuminate\Support\Facades\Mail;
 
 class SakramenBaptisAnakController extends Controller
 {
@@ -59,28 +61,29 @@ class SakramenBaptisAnakController extends Controller
             return redirect('/baptis-anak')->with('errorMsg', 'Umur Melebihi Batas');
         }
 
-        DB::table('sakramen_baptis_anak')->insert([
-            'nama_diri' => $request->nama_diri,
-            'nama_baptis' => $request->nama_baptis,
-            'tempat_lahir' => $request->tempat_lahir,
-            'umur' => $umur,
-            'tanggal_lahir' => $request->tanggal_lahir,
-            'nama_ayah' => $request->nama_ayah,
-            'nama_ibu' => $request->nama_ibu,
-            'status_perkawinan_orangtua' =>
-                $request->status_perkawinan_orangtua,
-            'alamat_orangtua' => $request->alamat_orangtua,
-            'nama_wali_baptis' => $request->nama_wali_baptis,
-            'tempat_baptis' => $request->tempat_baptis,
-            'dibaptis_oleh' => $request->dibaptis_oleh,
-            'email' => $request->email,
-            'fc_surat_pernikahan_gereja_orangtua' => $save_fc_surat_nikah_gereja,
-            'fc_surat_nikah_sipil_orangtua' => $save_fc_surat_nikah_sipil,
-            'fc_akte_kelahiran' => $save_fc_surat_akte_kelahiran,
-            'fc_surat_nikah_gereja_wali_baptis' => $save_fc_surat_nikah_wali,
-            'batas_konfirmasi' => $tanggal_pelaksanaan,
-            'status_pembayaran' => 'belum',
-        ]);
+        $baptisAnak = new BaptisAnak;
+        $baptisAnak->nama_diri = $request->nama_diri;
+        $baptisAnak->nama_baptis = $request->nama_baptis;
+        $baptisAnak->tempat_lahir = $request->tempat_lahir;
+        $baptisAnak->umur = $umur;
+        $baptisAnak->tanggal_lahir = $request->tanggal_lahir;
+        $baptisAnak->nama_ayah = $request->nama_ayah;
+        $baptisAnak->nama_ibu = $request->nama_ibu;
+        $baptisAnak->status_perkawinan_orangtua = $request->status_perkawinan_orangtua;
+        $baptisAnak->alamat_orangtua = $request->alamat_orangtua;
+        $baptisAnak->nama_wali_baptis = $request->nama_wali_baptis;
+        $baptisAnak->tempat_baptis = $request->tempat_baptis;
+        $baptisAnak->dibaptis_oleh = $request->dibaptis_oleh;
+        $baptisAnak->email = $request->email;
+        $baptisAnak->fc_surat_pernikahan_gereja_orangtua = $save_fc_surat_nikah_gereja;
+        $baptisAnak->fc_surat_nikah_sipil_orangtua = $save_fc_surat_nikah_sipil;
+        $baptisAnak->fc_akte_kelahiran = $save_fc_surat_akte_kelahiran;
+        $baptisAnak->fc_surat_nikah_gereja_wali_baptis = $save_fc_surat_nikah_wali;
+        $baptisAnak->batas_konfirmasi = $tanggal_pelaksanaan;
+        $baptisAnak->status_pembayaran = "belum";
+        $baptisAnak->save();
+
+        Mail::to($baptisAnak->email)->send(new EmailBaptisAnak());
 
        return redirect('/baptis-anak')->with('successMsg', 'Data Berhasil di Tambah');
     }
