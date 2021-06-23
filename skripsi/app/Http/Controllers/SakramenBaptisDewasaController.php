@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\BaptisDewasa;
 use Illuminate\Support\Facades\Storage;
+use App\Mail\EmailBaptisDewasa;
+use Illuminate\Support\Facades\Mail;
 
 class SakramenBaptisDewasaController extends Controller
 {
@@ -87,6 +89,8 @@ class SakramenBaptisDewasaController extends Controller
         $baptisDewasa->batas_konfirmasi = $tanggal_pelaksanaan;
         $baptisDewasa->status_pembayaran = 'belum';
         $baptisDewasa->save();
+
+        Mail::to($baptisDewasa->email)->send(new EmailBaptisDewasa());
 
         return redirect('/baptis-dewasa')->with('successMsg', 'Data Berhasil di Simpan');
     }

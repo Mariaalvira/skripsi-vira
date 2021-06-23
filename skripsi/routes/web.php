@@ -56,6 +56,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function () 
     Route::get('', 'AdminController@index');
     // baptis anak
     Route::get('/baptis-anak', 'SakramenBaptisAnakController@show_baptis_anak');
+    Route::get('baptis-anak/cetak_pdf', 'SakramenBaptisAnakController@cetak_pdf');
 	// Route::post('/create', 'KomuniController@store_komuni');
     Route::get('/form-edit/baptis-anak/{id}','SakramenBaptisAnakController@show_update');
     Route::post('/update/baptis-anak/{id}','SakramenBaptisAnakController@update_baptis_anak');

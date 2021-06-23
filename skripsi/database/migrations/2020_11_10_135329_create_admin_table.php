@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAkunTable extends Migration
+class CreateAdminTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateAkunTable extends Migration
      */
     public function up()
     {
-        Schema::create('akun', function (Blueprint $table) {
-            $table->id('id_akun');
-            $table->string('email', 30);
+        Schema::create('admin', function (Blueprint $table) {
+            $table->id('id_admin');
+            $table->string('username', 30);
             $table->string('password', 30);
             $table->string('nama_admin', 50);
             $table->integer('role_user')->unsigned();
@@ -29,6 +29,6 @@ class CreateAkunTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('akun');
+        Schema::dropIfExists('admin');
     }
 }

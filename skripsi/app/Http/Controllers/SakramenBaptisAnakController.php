@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Storage;
 use App\Mail\EmailBaptisAnak;
 use Illuminate\Support\Facades\Mail;
 
+use PDF;
+
 class SakramenBaptisAnakController extends Controller
 {
     public function index()
@@ -119,6 +121,14 @@ class SakramenBaptisAnakController extends Controller
         $baptisAnak->save();
 
         return redirect('/admin/baptis-anak')->with('successMsg', 'Data Berhasil di Ubah');
+    }
+
+    public function cetak_pdf()
+    {
+       $data = BaptisAnak::all();
+ 
+        $pdf = PDF::loadview('baptisAnak_pdf',['data'=>$data])->setPaper('a4', 'landscape');
+        return $pdf->stream();
     }
 
     //  public function edit($id){

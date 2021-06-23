@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\SakramenPerkawinan;
 use Illuminate\Support\Facades\Storage;
+use App\Mail\EmailSakramenPerkawinan;
+use Illuminate\Support\Facades\Mail;
 
 
 class SakramenPerkawinanController extends Controller
@@ -54,6 +56,8 @@ class SakramenPerkawinanController extends Controller
         $sakramenPerkawinan->batas_konfirmasi = $batas_konfirmasi;
         $sakramenPerkawinan->status_pembayaran = 'belum';
         $sakramenPerkawinan->save();
+
+        Mail::to($sakramenPerkawinan->email)->send(new EmailSakramenPerkawinan());
 
         return redirect('/perkawinan')->with('successMsg', 'Data Berhasil di Tambah');
     }

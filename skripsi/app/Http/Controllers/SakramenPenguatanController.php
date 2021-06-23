@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\SakramenPenguatan;
 use Illuminate\Support\Facades\Storage;
+use App\Mail\EmailSakramenPenguatan;
+use Illuminate\Support\Facades\Mail;
 
 class SakramenPenguatanController extends Controller
 {
@@ -56,6 +58,8 @@ class SakramenPenguatanController extends Controller
         $sakramenPenguatan->batas_konfirmasi = $tanggal_pelaksanaan;
         $sakramenPenguatan->status_pembayaran = 'belum';
         $sakramenPenguatan->save();
+
+         Mail::to($sakramenPenguatan->email)->send(new EmailSakramenPenguatan());
 
         return redirect('/penguatan')->with('successMsg', 'Data Berhasil di Tambah');    }
 

@@ -20,7 +20,7 @@
                         <th scope="col" class="text-center">Nama</th>
                         <th scope="col" class="text-center">Nama Baptis</th>
                         <th scope="col" class="text-center">Nama Wali Baptis</th>
-                        <th scope="col" class="text-center">Pembaktis</th>
+                        <th scope="col" class="text-center">Status</th>
                         <th scope="col" class="text-center">Email</th>
                         <th scope="col" colspan="2" class="text-center">Action</th>
                     </tr>
@@ -32,14 +32,19 @@
                             <td>{{ $data->nama_diri }}</td>
                             <td>{{ $data->nama_baptis }}</td>
                             <td>{{ $data->nama_wali_baptis }}</td>
-                            <td>{{ $data->dibaptis_oleh }}</td>
+                            @if($data->status_pembayaran == "belum")
+                                <td class="text-center"><span class="fa fa-window-close"></span></td>
+                            @else
+                                <td class="text-center"><span class="fa fa-check"></span></td>
+
+                            @endif
                             <td>{{ $data->email }}</td>
                             <td>
                                 <a href="{{ url('admin/form-edit/baptis-anak/' . $data->id) }}"
                                     class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top"
                                     title="edit data"><i class="fa fa-edit"></i></a>
                                 <a href="" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top"
-                                    title="send email"><i class="fa fa-envelope"></i></a>
+                                    title="konfirmasi pembayaran"><i class="fa fa-money"></i></a>
                                 <a href="" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top"
                                     title="detail data"><i class="fa fa-info"></i></a>
                             </td>

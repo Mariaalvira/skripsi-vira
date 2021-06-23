@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\SakramenKomuni;
 use Illuminate\Support\Facades\Storage;
+use App\Mail\EmailSakramenKomuni;
+use Illuminate\Support\Facades\Mail;
 
 
 class SakramenKomuniController extends Controller
@@ -57,7 +59,9 @@ class SakramenKomuniController extends Controller
         $sakramenKomuni->status_pembayaran = 'belum';
         $sakramenKomuni->save();
 
-        return redirect('/sakramen-komuni')->with('successMsg', 'Data Berhasil di Tambah');
+        Mail::to($sakramenKomuni->email)->send(new EmailSakramenKomuni());
+
+        return redirect('/komuni-pertama')->with('successMsg', 'Data Berhasil di Tambah');
     }
 
     public function show_update($id)

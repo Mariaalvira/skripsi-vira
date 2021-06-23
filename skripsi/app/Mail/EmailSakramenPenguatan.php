@@ -7,8 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Carbon\Carbon;
-
-class EmailBaptisAnak extends Mailable
+class EmailSakramenPenguatan extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -34,7 +33,7 @@ class EmailBaptisAnak extends Mailable
             ->view('email.sakramen_mail')
             ->with(
             [
-                'nama_sakramen' => 'Baptis Anak',
+                'nama_sakramen' => 'Penguatan/Krisma',
                 'batas_konfirmasi' => Carbon::now()->addDays(3)
             ]);
         
