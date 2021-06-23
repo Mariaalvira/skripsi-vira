@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\BaptisAnak;
+use App\Jadwal;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\EmailBaptisAnak;
 use Illuminate\Support\Facades\Mail;
@@ -21,7 +22,7 @@ class SakramenBaptisAnakController extends Controller
 
     public function show_baptis_anak()
     {
-        $datas = BaptisAnak::where('status_pembayaran', 'belum')->get();
+        $datas = BaptisAnak::get();
         return view('content.admin.table.tabel_baptis_anak', compact('datas'));
     }
 
@@ -123,17 +124,26 @@ class SakramenBaptisAnakController extends Controller
         return redirect('/admin/baptis-anak')->with('successMsg', 'Data Berhasil di Ubah');
     }
 
-    public function cetak_pdf()
+    public function cetak_pdf($id)
     {
-       $data = BaptisAnak::all();
- 
-        $pdf = PDF::loadview('baptisAnak_pdf',['data'=>$data])->setPaper('a4', 'landscape');
+        $data = BaptisAnak::find($id);
+        $pdf = PDF::loadview('content.admin.cetak-pdf.baptis_anak_pdf',['data' => $data]);
         return $pdf->stream();
     }
 
-    //  public function edit($id){
+    public function updateJadwal($id)
+    {
+        $baptisAnak = BaptisAnak::find($id);
+        $jadwal = Jadwal::where('nama_sakramen', 'Baptis Anak')->where('periode', Carbon::now()->format('Y'))->first();
+        $baptisAnak->id_jadwal = $jadwal->id;
+        $baptisAnak->status_pembayaran = 'sudah';
+        $baptisAnak->save();
+       return redirect('/admin/baptis-anak')->with('successMsg', 'Pembayaran Telah Dilakukan');
+    }
 
-    //$sakramen = DB::tabel('sakramen')->where('sakramen_id',$id)->get();
-    //return view('edit',['sakramen' => $sakramen]);
-    //}
+    public function detail_baptis_anak($id)
+    {
+        $data = BaptisAnak::find($id);
+        return view('content.admin.detail.baptis_anak_detail', compact('data'));
+    }
 }

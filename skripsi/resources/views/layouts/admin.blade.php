@@ -90,6 +90,20 @@
             transition: all .2s;
         }
 
+        #judul {
+            text-align: center;
+        }
+
+        #halaman {
+            width: auto;
+            height: auto;
+            position: absolute;
+            padding-top: 50px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 80px;
+        }
+
     </style>
 </head>
 
@@ -153,13 +167,11 @@
             $("menu ul ul").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(), e
                 .stopPropagation()
         });
-
     </script>
     <script>
         $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
-
     </script>
 </body>
 

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class JadwalController extends Controller
 {
-	
+
 	public function index()
 	{
         $datas = Jadwal::all();
