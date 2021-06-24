@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\SakramenKomuni;
+use App\Jadwal;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\EmailSakramenKomuni;
 use Illuminate\Support\Facades\Mail;
 
+use PDF;
 
 class SakramenKomuniController extends Controller
 {
@@ -94,6 +96,29 @@ class SakramenKomuniController extends Controller
         $sakramenKomuni->save();
 
         return redirect('/admin/komuni-pertama')->with('successMsg', 'Data Berhasil di Ubah');
+    }
+
+    public function cetak_pdf($id)
+    {
+        $data = SakramenKomuni::find($id);
+        $pdf = PDF::loadview('content.admin.cetak-pdf.komuni_pdf',['data' => $data]);
+        return $pdf->stream();
+    }
+
+    public function updateJadwal($id)
+    {
+        $sakramenKomuni = SakramenKomuni::find($id);
+        $jadwal = Jadwal::where('nama_sakramen', 'Komuni Pertama')->where('periode', Carbon::now()->format('Y'))->first();
+        $sakramenKomuni->id_jadwal = $jadwal->id;
+        $sakramenKomuni->status_pembayaran = 'sudah';
+        $sakramenKomuni->save();
+       return redirect('/admin/komuni-pertama')->with('successMsg', 'Pembayaran Telah Dilakukan');
+    }
+
+    public function detail_komuni($id)
+    {
+        $data = SakramenKomuni::find($id);
+        return view('content.admin.detail.komuni_detail', compact('data'));
     }
 
 }

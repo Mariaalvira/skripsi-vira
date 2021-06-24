@@ -66,22 +66,34 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function () 
 
     // baptis dewasa
     Route::get('/baptis-dewasa', 'SakramenBaptisDewasaController@show_baptis_dewasa');
+    Route::get('/baptis-dewasa/cetak_pdf/{id}', 'SakramenBaptisDewasaController@cetak_pdf');
+    Route::get('/baptis-dewasa/jadwal/{id}','SakramenBaptisDewasaController@updateJadwal');
+    Route::get('/baptis-dewasa/detail/{id}','SakramenBaptisDewasaController@detail_baptis_dewasa');
     Route::get('/form-edit/baptis-dewasa/{id}','SakramenBaptisDewasaController@show_update');
     Route::post('/update/baptis-dewasa/{id}','SakramenBaptisDewasaController@update_baptis_dewasa');
 
     // sakramen perkawinan
     Route::get('/perkawinan', 'SakramenPerkawinanController@show_perkawinan');
+    Route::get('/perkawinan/cetak_pdf/{id}', 'SakramenPerkawinanController@cetak_pdf');
+    Route::get('/perkawinan/jadwal/{id}','SakramenPerkawinanController@updateJadwal');
+    Route::get('/perkawinan/detail/{id}','SakramenPerkawinanController@detail_perkawinan');
     Route::get('/form-edit/perkawinan/{id}','SakramenPerkawinanController@show_update');
     Route::post('/update/perkawinan/{id}','SakramenPerkawinanController@update_sakramen_perkawinan');
 
     // sakramen komuni pertama
     Route::get('/komuni-pertama', 'SakramenKomuniController@show_komuni_pertama');
+    Route::get('/komuni-pertama/cetak_pdf/{id}', 'SakramenKomuniController@cetak_pdf');
+    Route::get('/komuni-pertama/jadwal/{id}','SakramenKomuniController@updateJadwal');
+    Route::get('/komuni-pertama/detail/{id}','SakramenKomuniController@detail_komuni');
     Route::get('/form-edit/komuni-pertama/{id}','SakramenKomuniController@show_update');
     Route::post('/update/komuni-pertama/{id}','SakramenKomuniController@update_sakramen_komuni');
 
 
-    // sakramen penguatan pertama
+    // sakramen penguatan
     Route::get('/penguatan','SakramenPenguatanController@show_penguatan');
+    Route::get('/penguatan/cetak_pdf/{id}', 'SakramenPenguatanController@cetak_pdf');
+    Route::get('/penguatan/jadwal/{id}','SakramenPenguatanController@updateJadwal');
+    Route::get('/penguatan/detail/{id}','SakramenPenguatanController@detail_penguatan');
     Route::get('/form-edit/penguatan/{id}','SakramenPenguatanController@show_update');
     Route::post('/update/penguatan/{id}','SakramenPenguatanController@update_sakramen_penguatan');
 

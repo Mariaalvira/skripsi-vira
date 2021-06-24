@@ -40,14 +40,19 @@
                             @endif
                             <td>{{ $data->email }}</td>
                             <td>
+                               @if ($data->status_pembayaran == 'belum')
                                 <a href="{{ url('admin/form-edit/baptis-dewasa/'.$data->id) }}" class="btn btn-success btn-sm"
                                     data-toggle="tooltip" data-placement="top" title="edit data"><i
                                         class="fa fa-edit"></i></a>
-                                <a href="" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top"
+                                <a href="{{ url('admin/baptis-dewasa/jadwal/' . $data->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top"
                                     title="konfirmasi pembayaran"><i class="fa fa-money"></i></a>
-                                <a href="" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top"
+                                <a href="{{ url('admin/baptis-dewasa/detail/' . $data->id) }}" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top"
                                     title="detail data"><i class="fa fa-info"></i></a>
-
+                            @else
+                                <a href="{{ url('admin/baptis-dewasa/cetak_pdf/' . $data->id) }}"
+                                        class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top"
+                                        title="Print Surat"><i class="fa fa-print"></i></a>
+                            @endif
                             </td>
                         </tr>
                     @endforeach

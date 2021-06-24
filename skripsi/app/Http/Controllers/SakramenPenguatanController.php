@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\SakramenPenguatan;
+use App\Jadwal;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\EmailSakramenPenguatan;
 use Illuminate\Support\Facades\Mail;
+
+use PDF;
 
 class SakramenPenguatanController extends Controller
 {
@@ -94,4 +97,28 @@ class SakramenPenguatanController extends Controller
 
         return redirect('/admin/penguatan')->with('successMsg', 'Data Berhasil di Ubah');
     }
+
+    public function cetak_pdf($id)
+    {
+        $data = SakramenPenguatan::find($id);
+        $pdf = PDF::loadview('content.admin.cetak-pdf.penguatan_pdf',['data' => $data]);
+        return $pdf->stream();
+    }
+
+    public function updateJadwal($id)
+    {
+        $sakramenPenguatan = SakramenPenguatan::find($id);
+        $jadwal = Jadwal::where('nama_sakramen', 'Penguatan')->where('periode', Carbon::now()->format('Y'))->first();
+        $sakramenPenguatan->id_jadwal = $jadwal->id;
+        $sakramenPenguatan->status_pembayaran = 'sudah';
+        $sakramenPenguatan->save();
+       return redirect('/admin/penguatan')->with('successMsg', 'Pembayaran Telah Dilakukan');
+    }
+
+    public function detail_penguatan($id)
+    {
+        $data = SakramenPenguatan::find($id);
+        return view('content.admin.detail.penguatan_detail', compact('data'));
+    }
+
 }

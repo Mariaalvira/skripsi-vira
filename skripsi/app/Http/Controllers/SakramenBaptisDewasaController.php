@@ -6,9 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\BaptisDewasa;
+use App\Jadwal;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\EmailBaptisDewasa;
 use Illuminate\Support\Facades\Mail;
+
+use PDF;
+
 
 class SakramenBaptisDewasaController extends Controller
 {
@@ -128,5 +132,29 @@ class SakramenBaptisDewasaController extends Controller
         $baptisDewasa->save();
 
         return redirect('/admin/baptis-dewasa')->with('successMsg', 'Data Berhasil di Ubah');
+    }
+
+
+    public function cetak_pdf($id)
+    {
+        $data = BaptisDewasa::find($id);
+        $pdf = PDF::loadview('content.admin.cetak-pdf.baptis_dewasa_pdf',['data' => $data]);
+        return $pdf->stream();
+    }
+
+    public function updateJadwal($id)
+    {
+        $baptisAnak = BaptisDewasa::find($id);
+        $jadwal = Jadwal::where('nama_sakramen', 'Baptis Dewasa')->where('periode', Carbon::now()->format('Y'))->first();
+        $baptisDewasa->id_jadwal = $jadwal->id;
+        $baptisDewasa->status_pembayaran = 'sudah';
+        $baptisDewasa->save();
+       return redirect('/admin/baptis-dewasa')->with('successMsg', 'Pembayaran Telah Dilakukan');
+    }
+
+    public function detail_baptis_dewasa($id)
+    {
+        $data = BaptisDewasa::find($id);
+        return view('content.admin.detail.baptis_dewasa_detail', compact('data'));
     }
 }

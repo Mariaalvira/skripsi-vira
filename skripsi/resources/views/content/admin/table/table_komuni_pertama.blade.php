@@ -39,10 +39,21 @@
 
                             @endif
                     <td>{{ $data->email }}</td>
-                    <td >
-                        <a href="{{ url('admin/form-edit/komuni-pertama/' . $data->id) }}" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="edit data"><i class="fa fa-edit"></i></a>
-                        <a class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="konfirmasi pembayaran"><i class="fa fa-money"></i></a>
-                        <a class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="detail data"><i class="fa fa-info"></i></a>
+                    <td>
+                        @if ($data->status_pembayaran == 'belum')
+                                <a href="{{ url('admin/form-edit/komuni-pertama/' . $data->id) }}"
+                                        class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top"
+                                        title="edit data"><i class="fa fa-edit"></i></a>
+                                <a href="{{ url('admin/komuni-pertama/jadwal/' . $data->id) }}"
+                                        class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="konfirmasi pembayaran"><i class="fa fa-money"></i></a>
+                                <a href="{{ url('admin/komuni-pertama/detail/' . $data->id) }}"
+                                        class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top"
+                                        title="detail data"><i class="fa fa-info"></i></a>
+                            @else
+                                <a href="{{ url('admin/komuni-pertama/cetak_pdf/' . $data->id) }}"
+                                        class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top"
+                                        title="Print Surat"><i class="fa fa-print"></i></a>
+                            @endif
                     </td>
                 </tr>
                 @endforeach

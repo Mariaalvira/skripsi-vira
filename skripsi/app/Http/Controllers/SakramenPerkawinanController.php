@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\SakramenPerkawinan;
+use App\Jadwal;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\EmailSakramenPerkawinan;
 use Illuminate\Support\Facades\Mail;
+
+use PDF;
 
 
 class SakramenPerkawinanController extends Controller
@@ -103,5 +106,28 @@ class SakramenPerkawinanController extends Controller
         $sakramenPerkawinan->save();
 
         return redirect('/admin/perkawinan')->with('successMsg', 'Data Berhasil di Ubah');
+    }
+
+    public function cetak_pdf($id)
+    {
+        $data = SakramenPerkawinan::find($id);
+        $pdf = PDF::loadview('content.admin.cetak-pdf.perkawinan_pdf',['data' => $data]);
+        return $pdf->stream();
+    }
+
+    public function updateJadwal($id)
+    {
+        $sakramenPerkawinan = SakramenPerkawinan::find($id);
+        $jadwal = Jadwal::where('nama_sakramen', 'Perkawinan')->where('periode', Carbon::now()->format('Y'))->first();
+        $sakramenPerkawinan->id_jadwal = $jadwal->id;
+        $sakramenPerkawinan->status_pembayaran = 'sudah';
+        $sakramenPerkawinan->save();
+       return redirect('/admin/perkawinan')->with('successMsg', 'Pembayaran Telah Dilakukan');
+    }
+
+    public function detail_perkawinan($id)
+    {
+        $data = SakramenPerkawinan::find($id);
+        return view('content.admin.detail.perkawinan_detail', compact('data'));
     }
 }
