@@ -22,7 +22,7 @@ class SakramenPenguatanController extends Controller
 
     public function show_penguatan()
     {
-        $datas = SakramenPenguatan::where('status_pembayaran', 'belum')->get();
+        $datas = SakramenPenguatan::get();
         return view('content.admin.table.tabel_penguatan', compact('datas'));
     }
 

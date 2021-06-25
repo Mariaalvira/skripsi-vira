@@ -1,7 +1,15 @@
 @extends('layouts.admin')
 
 @section('content')
-
+    @php
+    $tanggal_lahir = date_create($data->tanggal_lahir);
+    $tanggal_lahir_suami = date_create($data->tanggal_lahir_suami);
+    $tanggal_baptis_suami = date_create($data->tanggal_baptis_suami);
+    $tanggal_lahir_istri = date_create($data->tanggal_lahir_istri);
+    $tanggal_baptis_istri = date_create($data->tanggal_baptis_istri);
+    $tanggal = date_create($data->tanggal);
+    $hari_ini = date_create(date('Y-m-d'));
+    @endphp
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
@@ -12,7 +20,7 @@
             <table style="font-size: 20px; height: 200px">
                 <tr>
                     <td style="height: 50px">
-                        <strong>Menerangkan bahwa </strong>
+                        <strong>Menerangkan bahwa : </strong>
                     </td>
                 </tr>
                 <tr>
@@ -23,13 +31,15 @@
                 <tr>
                     <td style="width: 30%;">Tempat, Tgl. Lahir</td>
                     <td style="width: 30%; text-align: center">:</td>
-                    <td style="width: 65%;">{{ $data->tempat_lahir_suami }}, {{ date_format($tanggal_lahir_suami, 'd M Y') }}
+                    <td style="width: 65%;">{{ $data->tempat_lahir_suami }},
+                        {{ date_format($tanggal_lahir_suami, 'd M Y') }}
                     </td>
                 </tr>
                 <tr>
                     <td style="width: 30%;">Tempat, Tgl. Baptis</td>
                     <td style="width: 30%; text-align: center">:</td>
-                    <td style="width: 65%;">{{ $data->tempat_baptis_suami }}, {{ date_format($tanggal_baptis_suami, 'd M Y') }}
+                    <td style="width: 65%;">{{ $data->tempat_baptis_suami }},
+                        {{ date_format($tanggal_baptis_suami, 'd M Y') }}
                     </td>
                 </tr>
                 <tr>
@@ -64,7 +74,7 @@
                 </tr>
                 <tr>
                     <td style="height: 50px">
-                        <strong>Akan melangsungkan perkawinan dengan </strong>
+                        <strong>Akan melangsungkan perkawinan dengan : </strong>
                     </td>
                 </tr>
                 <tr>
@@ -75,13 +85,15 @@
                 <tr>
                     <td style="width: 30%;">Tempat, Tgl. Lahir</td>
                     <td style="width: 30%; text-align: center">:</td>
-                    <td style="width: 65%;">{{ $data->tempat_lahir_istri }}, {{ date_format($tanggal_lahir_istri, 'd M Y') }}
+                    <td style="width: 65%;">{{ $data->tempat_lahir_istri }},
+                        {{ date_format($tanggal_lahir_istri, 'd M Y') }}
                     </td>
                 </tr>
                 <tr>
                     <td style="width: 30%;">Tempat, Tgl. Baptis</td>
                     <td style="width: 30%; text-align: center">:</td>
-                    <td style="width: 65%;">{{ $data->tempat_baptis_istri }}, {{ date_format($tanggal_baptis_istri, 'd M Y') }}
+                    <td style="width: 65%;">{{ $data->tempat_baptis_istri }},
+                        {{ date_format($tanggal_baptis_istri, 'd M Y') }}
                     </td>
                 </tr>
                 <tr>

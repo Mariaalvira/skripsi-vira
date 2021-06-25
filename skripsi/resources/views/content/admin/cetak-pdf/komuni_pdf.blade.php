@@ -2,6 +2,7 @@
 <html lang="en">
 @php
 $tanggal_lahir = date_create($data->tanggal_lahir);
+$tanggal_baptis = date_create($data->tanggal_baptis);
 $hari_ini = date_create(date('Y-m-d'));
 @endphp
 
@@ -86,7 +87,7 @@ $hari_ini = date_create(date('Y-m-d'));
             <tr>
                 <td style="width: 30%;"></td>
                 <td style="width: 5%;"></td>
-                <td style="width: 65%; height: 30px">Telp/HP : </td>
+                <td style="width: 65%; height: 30px">Telp/HP : {{ $data->no_telepon }}</td>
             </tr>
         </table>
 
@@ -112,6 +113,16 @@ $hari_ini = date_create(date('Y-m-d'));
                 <td style="width: 30%; border-top: 1px solid; text-align: center">Orangtua</td>
                 <td style="width: 5%;"></td>
                 <td style="width: 30%; border-top: 1px solid; text-align: center">Calon</td>
+            </tr>
+        </table>
+
+        <br><br><br>
+        <h3>Syarat-Syarat :</h3>
+        <table>
+            <tr>
+                @if ($data->fc_surat_baptis != null)
+                    <td>Fotocopy Surat Baptis (<b>ada</b>)</td>
+                @endif
             </tr>
         </table>
     </div>

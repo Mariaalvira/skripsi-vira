@@ -117,6 +117,30 @@ $hari_ini = date_create(date('Y-m-d'));
                 <td style="width: 30%; border-top: 1px solid; text-align: center">Pemohon</td>
             </tr>
         </table>
+        <br><br><br>
+        <h3>Syarat-Syarat :</h3>
+        <table>
+            <tr>
+                @if ($data->fc_surat_pernikahan_gereja_orangtua != null)
+                    <td>Fotocopy Surat Pernikahan Gereja Orang Tua (<b>ada</b>)</td>
+                @endif
+            </tr>
+            <tr>
+                @if ($data->fc_surat_nikah_sipil_orangtua != null)
+                    <td>Fotocopy Surat Pernikahan Sipil Orang Tua (<b>ada</b>)</td>
+                @endif
+            </tr>
+            <tr>
+                @if ($data->fc_akte_kelahiran != null)
+                    <td>Fotocopy Akte Kelahiran (<b>ada</b>)</td>
+                @endif
+            </tr>
+            <tr>
+                @if ($data->fc_surat_nikah_gereja_wali_baptis != null)
+                    <td>Fotocopy Surat Pernikahan Gereja Wali Baptis (<b>ada</b>)</td>
+                @endif
+            </tr>
+        </table>
     </div>
 </body>
 

@@ -22,7 +22,7 @@ class SakramenPerkawinanController extends Controller
     }
 
     public function show_perkawinan(){
-        $datas = SakramenPerkawinan::where('status_pembayaran', 'belum')->get();
+        $datas = SakramenPerkawinan::get();
         return view('content.admin.table.table_perkawinan', compact('datas'));
     }
 

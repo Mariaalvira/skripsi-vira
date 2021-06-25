@@ -103,7 +103,7 @@ $hari_ini = date_create(date('Y-m-d'));
             <tr>
                 <td style="width: 30%;">Nama Walibaptis</td>
                 <td style="width: 5%;">:</td>
-                <td style="width: 65%;">{{ $data->nama_walibaptis }}</td>
+                <td style="width: 65%;">{{ $data->nama_wali_baptis }}</td>
             </tr>
             <tr>
                 <td style="width: 30%;">Pemberkatan & Pembaptisan</td>
@@ -134,6 +134,31 @@ $hari_ini = date_create(date('Y-m-d'));
                 <td style="width: 30%; border-top: 1px solid; text-align: center">Orangtua/Wali</td>
                 <td style="width: 5%;"></td>
                 <td style="width: 30%; border-top: 1px solid; text-align: center">Calon</td>
+            </tr>
+        </table>
+
+        <br><br><br>
+        <h3>Syarat-Syarat :</h3>
+        <table>
+            <tr>
+                @if ($data->fc_surat_ganti_nama != null)
+                    <td>Fotocopy Surat Ganti Nama (<b>ada</b>)</td>
+                @endif
+            </tr>
+            <tr>
+                @if ($data->fc_surat_nikah_calon_baptis != null)
+                    <td>Fotocopy Surat Nikah Calon Baptis (<b>ada</b>)</td>
+                @endif
+            </tr>
+            <tr>
+                @if ($data->fc_akte_kelahiran != null)
+                    <td>Fotocopy Akte Kelahiran (<b>ada</b>)</td>
+                @endif
+            </tr>
+            <tr>
+                @if ($data->fc_surat_nikah_gereja_wali_baptis != null)
+                    <td>Fotocopy Surat Pernikahan Gereja Wali Baptis (<b>ada</b>)</td>
+                @endif
             </tr>
         </table>
     </div>

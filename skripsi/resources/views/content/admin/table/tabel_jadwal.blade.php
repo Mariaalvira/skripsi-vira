@@ -13,15 +13,15 @@
                     <a href="{{ url('admin/jadwal/form-create') }}" class="btn btn-primary btn">Tambah Data</a>
                 </div>
             </div>
-             <br>
+            <br>
             <table class="demo-table responsive">
                 <div class="row">
                     <div class="col-md-12 mt-3">
-                      @if(session('successMsg'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('successMsg') }}
-                        </div>
-                      @endif
+                        @if (session('successMsg'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('successMsg') }}
+                            </div>
+                        @endif
                     </div>
                 </div>
                 <thead class="text-center">
@@ -42,14 +42,10 @@
                             <td>{{ number_format($data->biaya) }}</td>
                             <td>{{ $data->periode }}</td>
                             <td>{{ $data->nama_sakramen }}</td>
-                            <td>
-                                <a href="{{ url('admin/jadwal/form-edit/' . $data->id) }}"
-                                    class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top"
-                                    title="edit data"><i class="fa fa-edit"></i></a>
-                                <a href="" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top"
-                                    title="send email"><i class="fa fa-envelope"></i></a>
-                                <a href="" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top"
-                                    title="detail data"><i class="fa fa-info"></i></a>
+                            <td class="text-center">
+                                <a href="{{ url('admin/jadwal/form-edit/' . $data->id) }}" class="btn btn-success btn-sm"
+                                    data-toggle="tooltip" data-placement="top" title="edit data"><i class="fa fa-edit"></i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach

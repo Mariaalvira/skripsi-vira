@@ -21,7 +21,7 @@ class SakramenKomuniController extends Controller
     }
 
     public function show_komuni_pertama(){
-        $datas = SakramenKomuni::where('status_pembayaran', 'belum')->get();
+        $datas = SakramenKomuni::get();
         return view('content.admin.table.table_komuni_pertama', compact('datas'));
     }
 

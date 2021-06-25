@@ -3,6 +3,7 @@
 @section('content')
     @php
     $tanggal_lahir = date_create($data->tanggal_lahir);
+    $tanggal_baptis = date_create($data->tanggal_baptis);
     $hari_ini = date_create(date('Y-m-d'));
     @endphp
     <div class="row">
@@ -78,7 +79,7 @@
                 <tr>
                     <td style="width: 30%;"></td>
                     <td style="width: 30%; text-align: center">:</td>
-                    <td style="width: 65%; height: 30px">Telp/HP : </td>
+                    <td style="width: 65%; height: 30px">Telp/HP : {{ $data->no_telepon }}</td>
                 </tr>
             </table>
         </div>

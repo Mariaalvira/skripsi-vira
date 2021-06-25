@@ -18,7 +18,7 @@
                     <td style="width: 30%; text-align: center">:</td>
                     <td style="width: 30%;">{{ $data->nama_diri }}</td>
                 </tr>
-                 <tr>
+                <tr>
                     <td style="width: 30%;">Nama Baptis</td>
                     <td style="width: 30%; text-align: center">:</td>
                     <td style="width: 30%;">{{ $data->nama_baptis }}</td>
@@ -87,7 +87,7 @@
                 <tr>
                     <td style="width: 30%;">Pemberkatan & Pembaptisan</td>
                     <td style="width: 30%; text-align: center">:</td>
-                    <td style="width: 65%;">{{ $data->pemberkatan_pembaptisan }}</td>
+                    <td style="width: 65%;">{{ $data->pemberkatan_dan_pembaptisan }}</td>
                 </tr>
             </table>
         </div>

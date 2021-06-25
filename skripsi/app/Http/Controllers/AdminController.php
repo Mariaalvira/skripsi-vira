@@ -9,7 +9,7 @@ use App\Admin;
 class AdminController extends Controller
 {
     public function index(){
-        return view('layouts.admin');
+        return view('content.admin.dashboard');
     }
 
     public function getBaptisAnak(){

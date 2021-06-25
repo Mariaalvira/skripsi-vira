@@ -23,7 +23,7 @@ class SakramenBaptisDewasaController extends Controller
 
     public function show_baptis_dewasa()
     {
-        $datas = BaptisDewasa::where('status_pembayaran', 'belum')->get();
+        $datas = BaptisDewasa::get();
         return view(
             'content.admin.table.table_baptis_dewasa',
             compact('datas')
@@ -144,7 +144,7 @@ class SakramenBaptisDewasaController extends Controller
 
     public function updateJadwal($id)
     {
-        $baptisAnak = BaptisDewasa::find($id);
+        $baptisDewasa = BaptisDewasa::find($id);
         $jadwal = Jadwal::where('nama_sakramen', 'Baptis Dewasa')->where('periode', Carbon::now()->format('Y'))->first();
         $baptisDewasa->id_jadwal = $jadwal->id;
         $baptisDewasa->status_pembayaran = 'sudah';

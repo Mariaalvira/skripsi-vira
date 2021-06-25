@@ -2,6 +2,11 @@
 <html lang="en">
 @php
 $tanggal_lahir = date_create($data->tanggal_lahir);
+$tanggal_lahir_suami = date_create($data->tanggal_lahir_suami);
+$tanggal_baptis_suami = date_create($data->tanggal_baptis_suami);
+$tanggal_lahir_istri = date_create($data->tanggal_lahir_istri);
+$tanggal_baptis_istri = date_create($data->tanggal_baptis_istri);
+$tanggal = date_create($data->tanggal);
 $hari_ini = date_create(date('Y-m-d'));
 @endphp
 
@@ -40,7 +45,7 @@ $hari_ini = date_create(date('Y-m-d'));
 
         <table>
             <tr>
-                <td style="height: 30px">Menerangkan bahwa</td>
+                <td style="height: 30px"><b>Menerangkan bahwa :</b></td>
             </tr>
             <tr>
                 <td style="width: 30%;">Nama Lengkap</td>
@@ -50,13 +55,15 @@ $hari_ini = date_create(date('Y-m-d'));
             <tr>
                 <td style="width: 30%;">Tempat, Tgl. Lahir</td>
                 <td style="width: 5%;">:</td>
-                <td style="width: 65%;">{{ $data->tempat_lahir_suami }}, {{ date_format($tanggal_lahir_suami, 'd M Y') }}
+                <td style="width: 65%;">{{ $data->tempat_lahir_suami }},
+                    {{ date_format($tanggal_lahir_suami, 'd M Y') }}
                 </td>
             </tr>
-             <tr>
+            <tr>
                 <td style="width: 30%;">Tempat, Tgl. Baptis</td>
                 <td style="width: 5%;">:</td>
-                <td style="width: 65%;">{{ $data->tempat_baptis_suami }}, {{ date_format($tanggal_baptis_suami, 'd M Y') }}
+                <td style="width: 65%;">{{ $data->tempat_baptis_suami }},
+                    {{ date_format($tanggal_baptis_suami, 'd M Y') }}
                 </td>
             </tr>
             <tr>
@@ -82,10 +89,10 @@ $hari_ini = date_create(date('Y-m-d'));
             <tr>
                 <td style="width: 30%;"></td>
                 <td style="width: 5%;"></td>
-                <td style="width: 65%; height: 30px">Telp/HP : </td>
+                <td style="width: 65%; height: 30px">Telp/HP : {{ $data->no_telepon_suami }}</td>
             </tr>
             <tr>
-                <td style="height: 30px">Akan melangsungkan perkawinan dengan</td>
+                <td style="height: 30px"><b>Akan melangsungkan perkawinan dengan :</b></td>
             </tr>
             <tr>
                 <td style="width: 30%;">Nama Lengkap</td>
@@ -95,13 +102,15 @@ $hari_ini = date_create(date('Y-m-d'));
             <tr>
                 <td style="width: 30%;">Tempat, Tgl. Lahir</td>
                 <td style="width: 5%;">:</td>
-                <td style="width: 65%;">{{ $data->tempat_lahir_istri }}, {{ date_format($tanggal_lahir_istri, 'd M Y') }}
+                <td style="width: 65%;">{{ $data->tempat_lahir_istri }},
+                    {{ date_format($tanggal_lahir_istri, 'd M Y') }}
                 </td>
             </tr>
-             <tr>
+            <tr>
                 <td style="width: 30%;">Tempat, Tgl. Baptis</td>
                 <td style="width: 5%;">:</td>
-                <td style="width: 65%;">{{ $data->tempat_baptis_istri }}, {{ date_format($tanggal_baptis_istri, 'd M Y') }}
+                <td style="width: 65%;">{{ $data->tempat_baptis_istri }},
+                    {{ date_format($tanggal_baptis_istri, 'd M Y') }}
                 </td>
             </tr>
             <tr>
@@ -127,7 +136,7 @@ $hari_ini = date_create(date('Y-m-d'));
             <tr>
                 <td style="width: 30%;"></td>
                 <td style="width: 5%;"></td>
-                <td style="width: 65%; height: 30px">Telp/HP : </td>
+                <td style="width: 65%; height: 30px">Telp/HP : {{ $data->no_telepon_istri }}</td>
             </tr>
             <tr>
                 <td style="width: 30%;">Perkawinan akan dilangsungkan di Gereja</td>
@@ -137,7 +146,7 @@ $hari_ini = date_create(date('Y-m-d'));
             <tr>
                 <td style="width: 30%;">Pada Hari/ Tanggal</td>
                 <td style="width: 5%;">:</td>
-                <td style="width: 65%;">{{ $data->tanggal }}</td>
+                <td style="width: 65%;">{{ date_format($tanggal, 'd M Y') }}</td>
             </tr>
             <tr>
                 <td style="width: 30%;">Pukul</td>
@@ -162,6 +171,8 @@ $hari_ini = date_create(date('Y-m-d'));
             </tr>
             <tr>
                 <td style="width: 30%; border-top: 1px solid; text-align: center">Ketua Lingkungan</td>
+                <td style="width: 5%;"></td>
+                <td style="width: 5%;"></td>
                 <td style="width: 5%;"></td>
                 <td style="width: 30%; border-top: 1px solid; text-align: center">Ketua Lingkungan</td>
             </tr>
