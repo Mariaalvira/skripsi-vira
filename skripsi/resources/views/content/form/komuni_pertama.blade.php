@@ -43,12 +43,12 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputTtl1">Tempat</label>
+                    <label for="exampleInputTtl1">Tempat Baptis</label>
                     <input type="text" class="form-control" id="exampleInputTtl1" placeholder="Masukan Tempat "
                         name="tempat_baptis">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputTtl1">Tanggal Baptis</label>T
+                    <label for="exampleInputTtl1">Tanggal Baptis</label>
                     <input type="date" class="form-control" id="exampleInputTtl1" placeholder="Masukan Tanggal Lahir"
                         name="tanggal_baptis">
                 </div>

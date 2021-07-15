@@ -103,11 +103,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0 text-white"
-                                type="submit">Search</button>
-                        </form>
+                        
                     </div>
                 </nav>
             </div>
@@ -147,7 +143,7 @@
 
         {{-- bagian footer --}}
         <div class="container p-2 my-2 text-center text-white bg-danger">
-            2 days ago
+            Jadwal Misa : Harian 05.45, Jumat Pertama 11.45 & 17.00 (dgn Adorasi), Sabtu 17.00, Minggu 08.00
         </div>
     </div>
 </body>
