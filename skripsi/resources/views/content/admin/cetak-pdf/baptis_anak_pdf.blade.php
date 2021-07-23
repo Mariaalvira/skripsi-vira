@@ -11,7 +11,7 @@ $hari_ini = date_create(date('Y-m-d'));
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sakramen Baptis Anak</title>
     <style>
-       .judul {
+        .judul {
             text-align: center;
         }
 
@@ -32,20 +32,20 @@ $hari_ini = date_create(date('Y-m-d'));
     <div class=halaman>
         <table>
             <tr>
-                <td>        
-                    <img src="{{ asset('images/logo.jpg') }}" > 
+                <td>
+                    <img src="{{ public_path('images/logo.jpg') }}">
                 </td>
                 <td>
                     <div class="judul">
-                        <h3 >PAROKI SANTO MIKAEL PANGKALAN ADISUTJIPTO</h3>
-                        <p >JL.Lettu TPT Sapardal No.1, Lanud Adisutjipto, Yogyakarta 55281
+                        <h3>PAROKI SANTO MIKAEL PANGKALAN ADISUTJIPTO</h3>
+                        <p>JL.Lettu TPT Sapardal No.1, Lanud Adisutjipto, Yogyakarta 55281
                             Tlp.(0274) 2803760, 488466 ext. 5154; E-mail: paroki_stmikael@yahoo.com
-                        </p> 
+                        </p>
                     </div>
                 </td>
             </tr>
         </table>
-        
+
         <hr>
         <u>
             <h2 class="judul">Formulir Pendaftaran Baptis Anak</h2>
