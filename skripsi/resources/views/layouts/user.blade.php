@@ -54,7 +54,7 @@
             {{-- bagian navbar --}}
             <div>
                 <nav class="navbar navbar-expand-lg navbar-warning bg-orange">
-                    <a class="navbar-brand text-white" href="#"><strong>Beranda</strong></a>
+                    <a class="navbar-brand text-white" href="{{ url('/') }}"><strong>Beranda</strong></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -68,20 +68,8 @@
                                     <strong>Tentang Kami</strong>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Sejarah</a>
-                                    <a class="dropdown-item" href="#">Visi-Misi</a>
-                                    <a class="dropdown-item" href="#">Pastor Paroki</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown"
-                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <strong>Multimedia</strong>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Galeri Photo</a>
-                                    <a class="dropdown-item" href="#">Video</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="{{ url('user/sejarah') }}">Sejarah</a>
+                                    <a class="dropdown-item" href="{{ url('user/visimisi') }}">Visi-Misi</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -98,7 +86,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">
+                                <a class="nav-link text-white" href="{{ url('user/hubungi') }}">
                                     <strong>Hubungi</strong>
                                 </a>
                             </li>

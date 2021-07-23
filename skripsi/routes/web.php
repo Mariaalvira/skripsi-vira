@@ -105,3 +105,18 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function () 
     Route::post('/jadwal/create','JadwalController@store_jadwal');
     Route::post('/jadwal/update/{id}','JadwalController@update_jadwal');
 });
+
+
+Route::group(['prefix' => 'user'], function () {
+    Route::get('/sejarah', function () {
+        return view('content.user.sejarah');
+    });
+
+    Route::get('/hubungi', function () {
+        return view('content.user.hubungi');
+    });
+
+    Route::get('/visimisi', function () {
+        return view('content.user.visimisi');
+    });
+});
